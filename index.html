@@ -41,7 +41,7 @@
 html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; }
 
 /* LAYOUT */
-#app { display: flex; flex-direction: column; height: 100dvh; height: 100vh; overflow: hidden; }
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; overflow: hidden; }
 .tab-content { display: none; flex: 1; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom)); }
 .tab-content.active { display: block; }
 
@@ -184,7 +184,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
   transform: translateX(-50%) translateY(100%);
   transition: transform 0.45s var(--ease-out);
   will-change: transform;
-  max-height: 90dvh; max-height: 90vh; overflow-y: auto;
+  max-height: 90vh; max-height: 90dvh; overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   padding-bottom: calc(24px + env(safe-area-inset-bottom));
 }
@@ -233,7 +233,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 }
 .day-row:last-child { border-bottom: none; }
 .day-label { font-size: 12px; font-weight: 600; color: var(--text3); width: 28px; flex-shrink: 0; }
-.day-workout { flex: 1; }
+.day-workout { flex: 1; min-width: 0; }
 .day-workout-name { font-size: 14px; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .day-workout-sub { font-size: 12px; color: var(--text4); margin-top: 1px; }
 .day-row.rest .day-workout-name { color: var(--text4); font-weight: 400; }
@@ -356,7 +356,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 
   <!-- TAB: HOME -->
   <div id="tab-home" class="tab-content active">
-    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
+    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0;overflow-x:hidden">
 
       <!-- HERO -->
       <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px" class="fade-in">
@@ -367,6 +367,11 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
           <div style="display:flex;gap:6px;margin-top:6px">
             <span class="badge badge-strava">Strava</span>
             <span class="badge badge-blue" id="home-week-badge">Woche 1</span>
+          </div>
+          <div id="hero-weight-row" style="display:none;margin-top:6px;font-size:12px;color:var(--text3)">
+            <span id="hero-weight-current" style="color:var(--text);font-weight:700"></span>
+            <span style="color:var(--text4)"> → Ziel: </span>
+            <span id="hero-weight-target" style="color:var(--green);font-weight:700"></span>
           </div>
         </div>
         <div style="margin-left:auto;text-align:center">
@@ -442,12 +447,18 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
         </div>
       </div>
 
+      <!-- TODAY'S MEALS -->
+      <div class="section" id="today-meals-section">
+        <div class="section-title">Mahlzeiten heute</div>
+        <div class="card" style="padding:16px" id="today-meals-card"></div>
+      </div>
+
     </div>
   </div>
 
   <!-- TAB: TRAINING -->
   <div id="tab-training" class="tab-content">
-    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
+    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0;overflow-x:hidden">
 
       <div style="font-size:24px;font-weight:800;margin-bottom:4px">Trainingsplan</div>
       <div style="font-size:14px;color:var(--text3);margin-bottom:20px">8 Wochen Body Recomp</div>
@@ -497,7 +508,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 
   <!-- TAB: ERNÄHRUNG -->
   <div id="tab-nutrition" class="tab-content">
-    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
+    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0;overflow-x:hidden">
 
       <div style="font-size:24px;font-weight:800;margin-bottom:4px">Ernährung</div>
       <div style="font-size:14px;color:var(--text3);margin-bottom:12px">7-Tage Mahlzeitenplan</div>
@@ -555,7 +566,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 
   <!-- TAB: FORTSCHRITT -->
   <div id="tab-progress" class="tab-content">
-    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
+    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0;overflow-x:hidden">
 
       <div style="font-size:24px;font-weight:800;margin-bottom:4px">Fortschritt</div>
       <div style="font-size:14px;color:var(--text3);margin-bottom:20px">Deine Entwicklung</div>
@@ -628,10 +639,38 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 
   <!-- TAB: EINSTELLUNGEN -->
   <div id="tab-settings" class="tab-content">
-    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
+    <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0;overflow-x:hidden">
 
       <div style="font-size:24px;font-weight:800;margin-bottom:4px">Einstellungen</div>
       <div style="font-size:14px;color:var(--text3);margin-bottom:20px">Konfiguration & Sync</div>
+
+      <!-- PLAN & KÖRPER -->
+      <div class="section">
+        <div class="section-title">Plan & Körper</div>
+        <div class="card" style="padding:16px">
+          <div class="settings-row" style="flex-direction:column;align-items:flex-start;gap:10px;padding-bottom:14px">
+            <div>
+              <div class="settings-row-label">Startdatum</div>
+              <div class="settings-row-sub">Bestimmt automatisch die aktuelle Trainingswoche</div>
+            </div>
+            <input type="date" id="start-date-input" class="input-field">
+          </div>
+          <div class="settings-row" style="flex-direction:column;align-items:flex-start;gap:10px;padding-bottom:14px">
+            <div><div class="settings-row-label">Aktuelles Gewicht</div></div>
+            <div style="display:flex;align-items:center;gap:10px;width:100%">
+              <input type="number" id="current-weight-input" class="input-field" min="40" max="200" step="0.1" style="flex:1" placeholder="82.0">
+              <span style="font-size:15px;color:var(--text3)">kg</span>
+            </div>
+          </div>
+          <div class="settings-row" style="flex-direction:column;align-items:flex-start;gap:10px">
+            <div><div class="settings-row-label">Zielgewicht</div></div>
+            <div style="display:flex;align-items:center;gap:10px;width:100%">
+              <input type="number" id="target-weight-input" class="input-field" min="40" max="200" step="0.1" style="flex:1" placeholder="78.0">
+              <span style="font-size:15px;color:var(--text3)">kg</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- FTP -->
       <div class="section">
@@ -987,6 +1026,9 @@ let workoutDone = JSON.parse(localStorage.getItem('workoutDone') || '{}');
 let nutritionDone = JSON.parse(localStorage.getItem('nutritionDone') || '{}');
 let streak = parseInt(localStorage.getItem('streak') || '0');
 let lastActive = localStorage.getItem('lastActive') || '';
+let startDate = localStorage.getItem('startDate') || '';
+let targetWeight = parseFloat(localStorage.getItem('targetWeight') || '0');
+let currentWeight = parseFloat(localStorage.getItem('currentWeight') || '0');
 
 function save() {
   localStorage.setItem('ftp', ftp);
@@ -996,6 +1038,9 @@ function save() {
   localStorage.setItem('nutritionDone', JSON.stringify(nutritionDone));
   localStorage.setItem('streak', streak);
   localStorage.setItem('lastActive', lastActive);
+  localStorage.setItem('startDate', startDate);
+  localStorage.setItem('targetWeight', targetWeight);
+  localStorage.setItem('currentWeight', currentWeight);
   debouncedSync();
 }
 
@@ -1010,6 +1055,44 @@ function calcMacros(def) {
   const carbsKcal = target - proteinKcal - fatKcal;
   const carbsG = Math.round(carbsKcal / 4);
   return { target, proteinG: PROTEIN_G, fatG, carbsG };
+}
+
+const DAY_OFFSETS = { Mo:0, Di:1, Mi:2, Do:3, Fr:4, Sa:5, So:6 };
+
+function getCurrentWeekFromDate() {
+  if (!startDate) return null;
+  const start = new Date(startDate); start.setHours(0,0,0,0);
+  const now = new Date(); now.setHours(0,0,0,0);
+  const diff = Math.floor((now - start) / 86400000);
+  if (diff < 0) return 1;
+  return Math.min(Math.floor(diff / 7) + 1, 8);
+}
+
+function getWeekStartDate(weekNum) {
+  if (!startDate) return null;
+  const d = new Date(startDate); d.setHours(0,0,0,0);
+  d.setDate(d.getDate() + (weekNum - 1) * 7);
+  return d;
+}
+
+function formatWeekDateRange(weekNum) {
+  const s = getWeekStartDate(weekNum); if (!s) return '';
+  const e = new Date(s); e.setDate(e.getDate() + 6);
+  const f = d => d.toLocaleDateString('de-DE', {day:'2-digit',month:'2-digit'});
+  return ` · ${f(s)}–${f(e)}`;
+}
+
+function getDayDate(weekNum, dayAbbrev) {
+  const s = getWeekStartDate(weekNum); if (!s) return '';
+  const d = new Date(s); d.setDate(d.getDate() + (DAY_OFFSETS[dayAbbrev] ?? 0));
+  return d.toLocaleDateString('de-DE', {day:'2-digit',month:'2-digit'});
+}
+
+function getTodayNutritionDay() {
+  const jsDay = new Date().getDay();
+  const idx = jsDay === 0 ? 6 : jsDay - 1;
+  const m = calcMacros(deficit);
+  return scaleNutrition(m.target)[idx];
 }
 
 function updateMacroDisplays(weekNum = null) {
@@ -1062,7 +1145,9 @@ function el(id) { return document.getElementById(id); }
 function switchTab(tab, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  el('tab-'+tab).classList.add('active');
+  const tabEl = el('tab-'+tab);
+  tabEl.classList.add('active');
+  tabEl.scrollTop = 0;
   btn.classList.add('active');
   if(tab==='progress') updateProgress();
   if(tab==='home') updateHome();
@@ -1175,7 +1260,7 @@ function buildWeeks() {
         <div class="week-badge${week.deload?' deload':''}">${week.num}</div>
         <div style="flex:1">
           <div style="font-size:15px;font-weight:700">KW ${week.num} — ${week.name}</div>
-          <div style="font-size:12px;color:var(--text3);margin-top:2px">${doneInWeek}/${totalInWeek} Rides · TSS ${week.tss}</div>
+          <div style="font-size:12px;color:var(--text3);margin-top:2px">${doneInWeek}/${totalInWeek} Rides · TSS ${week.tss}${formatWeekDateRange(week.num)}</div>
         </div>
         <span class="accordion-chevron">⌄</span>
       </div>
@@ -1207,7 +1292,7 @@ function buildDayRows(week) {
     if(data.rest) {
       return `<div class="day-row rest">
         <div class="day-label">${day}</div>
-        <div class="day-workout"><div class="day-workout-name">Ruhe</div></div>
+        <div class="day-workout"><div class="day-workout-name">Ruhe</div><div class="day-workout-sub">${getDayDate(week.num, day) || 'Ruhe'}</div></div>
       </div>`;
     }
     const zoneColor = zoneColor_(data.zone);
@@ -1215,7 +1300,7 @@ function buildDayRows(week) {
       <div class="day-label">${day}</div>
       <div class="day-workout workout-tap" onclick="openWorkoutModal(${week.num},'${day}')">
         <div class="day-workout-name">${data.name}</div>
-        <div class="day-workout-sub">${data.desc} · ${data.dur}min</div>
+        <div class="day-workout-sub">${data.desc} · ${data.dur}min${getDayDate(week.num, day) ? ' · '+getDayDate(week.num, day) : ''}</div>
       </div>
       <span class="badge" style="background:${zoneColor.bg};color:${zoneColor.c};margin-right:8px">${data.zone}</span>
       <div class="check-btn${isDone?' done':''}" onclick="toggleWorkout(event,'${key}',${week.num})" id="check-${key}"></div>
@@ -1576,7 +1661,7 @@ function buildNutrition(days = null) {
           ${day.meals.map(meal=>`
             <div style="display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--border)">
               <div style="font-size:12px;color:var(--text4);width:38px;flex-shrink:0;padding-top:1px">${meal.time}</div>
-              <div style="flex:1">
+              <div style="flex:1;min-width:0;overflow:hidden">
                 <div style="font-size:14px;font-weight:600">${meal.name}</div>
                 <div style="font-size:12px;color:var(--text4);margin-top:2px;line-height:1.4">${meal.detail}</div>
               </div>
@@ -1614,12 +1699,18 @@ function updateHome() {
   setEl('streak-display', streak);
   setEl('progress-streak', streak);
 
-  // Current week (find first non-complete week)
-  let currentWeek = 1;
-  for(let w of WEEKS) {
-    const done = Object.keys(workoutDone).filter(k=>k.startsWith('w'+w.num+'-')&&workoutDone[k]).length;
-    if(done < w.rides) { currentWeek = w.num; break; }
-    currentWeek = w.num;
+  // Current week
+  const dateWeek = getCurrentWeekFromDate();
+  let currentWeek;
+  if (dateWeek !== null) {
+    currentWeek = dateWeek;
+  } else {
+    currentWeek = 1;
+    for (let w of WEEKS) {
+      const done = Object.keys(workoutDone).filter(k=>k.startsWith('w'+w.num+'-')&&workoutDone[k]).length;
+      if (done < w.rides) { currentWeek = w.num; break; }
+      currentWeek = w.num;
+    }
   }
   setEl('home-week-badge', 'Woche '+currentWeek);
   const week = WEEKS.find(w=>w.num===currentWeek);
@@ -1655,6 +1746,28 @@ function updateHome() {
   if(!found) {
     el('next-workout-card').innerHTML = '<div style="font-size:15px;font-weight:600;color:var(--text3)">Alle Workouts erledigt! 🎉</div>';
   }
+
+  if (currentWeight > 0 || targetWeight > 0) {
+    el('hero-weight-row').style.display = 'block';
+    setEl('hero-weight-current', currentWeight > 0 ? currentWeight.toFixed(1)+' kg' : '—');
+    setEl('hero-weight-target', targetWeight > 0 ? targetWeight.toFixed(1)+' kg' : '—');
+  } else {
+    el('hero-weight-row').style.display = 'none';
+  }
+
+  const td = getTodayNutritionDay();
+  el('today-meals-card').innerHTML = `
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <span style="font-size:14px;font-weight:600">${td.name} · ${td.type}</span>
+    <span style="font-size:12px;color:var(--text3)">${td.kcal} kcal</span>
+  </div>
+  ${td.meals.map(m=>`
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border)">
+      <div style="font-size:11px;color:var(--text4);width:36px;flex-shrink:0">${m.time}</div>
+      <div style="flex:1;min-width:0;font-size:13px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${m.name}</div>
+      <div style="flex-shrink:0;font-size:12px;font-weight:700;color:var(--text3)">${m.kcal}</div>
+    </div>`).join('')}
+`;
 
   updateRings();
 }
@@ -1789,6 +1902,10 @@ function buildComplianceChart() {
 // SETTINGS
 // ============================================================
 function initSettings() {
+  el('start-date-input').value = startDate;
+  el('current-weight-input').value = currentWeight > 0 ? currentWeight : '';
+  el('target-weight-input').value = targetWeight > 0 ? targetWeight : '';
+
   el('ftp-input').value = ftp;
   el('global-deficit-slider').value = deficit;
   el('settings-deficit-slider').value = deficit;
@@ -1797,6 +1914,20 @@ function initSettings() {
   const savedGistId = localStorage.getItem('gistId')||'';
   el('gist-token-input').value = savedToken;
   el('gist-id-input').value = savedGistId;
+
+  el('start-date-input').addEventListener('change', () => {
+    startDate = el('start-date-input').value;
+    save(); buildWeeks(); updateHome();
+    showToast('📅 Startdatum gesetzt');
+  });
+  el('current-weight-input').addEventListener('input', () => {
+    currentWeight = parseFloat(el('current-weight-input').value) || 0;
+    save(); updateHome();
+  });
+  el('target-weight-input').addEventListener('input', () => {
+    targetWeight = parseFloat(el('target-weight-input').value) || 0;
+    save(); updateHome();
+  });
 
   el('ftp-input').addEventListener('input', () => {
     ftp = parseInt(el('ftp-input').value)||221;
@@ -1849,6 +1980,10 @@ function resetData() {
   localStorage.clear();
   workoutDone={};nutritionDone={};streak=0;lastActive='';
   deficit=370;ftp=221;weekDeficits={};
+  startDate='';targetWeight=0;currentWeight=0;
+  if(el('start-date-input')) el('start-date-input').value='';
+  if(el('current-weight-input')) el('current-weight-input').value='';
+  if(el('target-weight-input')) el('target-weight-input').value='';
   buildWeeks();buildNutrition();updateHome();updateMacroDisplays();initSettings();
   showToast('🗑 Daten zurückgesetzt');
 }
@@ -1857,7 +1992,7 @@ function resetData() {
 // GIST SYNC
 // ============================================================
 function getStateData() {
-  return {ftp,deficit,weekDeficits,workoutDone,nutritionDone,streak,lastActive};
+  return {ftp,deficit,weekDeficits,workoutDone,nutritionDone,streak,lastActive,startDate,targetWeight,currentWeight};
 }
 
 async function syncToGist(data) {
@@ -1928,6 +2063,9 @@ async function loadAndApplyGist() {
   if(data.nutritionDone) nutritionDone=data.nutritionDone;
   if(data.streak!==undefined) streak=data.streak;
   if(data.lastActive) lastActive=data.lastActive;
+  if(data.startDate !== undefined) startDate = data.startDate;
+  if(data.targetWeight !== undefined) targetWeight = data.targetWeight;
+  if(data.currentWeight !== undefined) currentWeight = data.currentWeight;
   save();
   buildWeeks();buildNutrition();updateHome();updateMacroDisplays();initSettings();
   showToast('☁️ Daten geladen!');
