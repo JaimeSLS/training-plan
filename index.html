@@ -33,7 +33,9 @@
   --text3: #ebebf599;
   --text4: #ebebf560;
   --nav-height: 83px;
-  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(--text); font-family: 'Inter', -apple-system, sans-serif; }
@@ -49,9 +51,9 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 /* BOTTOM NAV */
 #bottom-nav {
   position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(18,18,26,0.92); backdrop-filter: blur(20px) saturate(180%);
+  background: rgba(10,10,15,0.82); backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-top: 1px solid var(--border);
+  border-top: 0.5px solid rgba(255,255,255,0.1);
   display: flex; align-items: stretch;
   padding-bottom: env(safe-area-inset-bottom);
   height: calc(var(--nav-height) + env(safe-area-inset-bottom));
@@ -60,9 +62,11 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 3px; min-height: 44px; padding: 8px 4px; border: none; background: none;
   color: var(--text4); cursor: pointer; transition: all 0.2s var(--spring); position: relative;
+  will-change: transform, color;
 }
+.nav-btn:active { transform: scale(0.92); }
 .nav-btn.active { color: var(--strava); }
-.nav-btn .nav-icon { font-size: 22px; transition: transform 0.3s var(--spring); line-height: 1; }
+.nav-btn .nav-icon { font-size: 22px; transition: transform 0.3s var(--spring); line-height: 1; will-change: transform; }
 .nav-btn.active .nav-icon { transform: scale(1.15) translateY(-1px); }
 .nav-btn .nav-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2px; }
 .nav-btn::after {
@@ -74,7 +78,12 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
 
 /* CARDS */
 .card {
-  background: var(--card); border-radius: 16px; border: 1px solid var(--border);
+  background: rgba(22,22,31,0.72);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
   overflow: hidden;
 }
 .card-glass {
@@ -114,7 +123,8 @@ html, body { height: 100%; overflow: hidden; background: var(--bg); color: var(-
   content: ''; position: absolute; top: 2px; left: 2px;
   width: 23px; height: 23px; border-radius: 50%;
   background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  transition: transform 0.3s var(--spring);
+  transition: transform 0.25s var(--ease-in-out);
+  will-change: transform;
 }
 .toggle.on { background: var(--green); border-color: var(--green); }
 .toggle.on::after { transform: translateX(20px); }
@@ -136,15 +146,16 @@ input[type=range] {
   background: var(--bg3); outline: none; cursor: pointer;
 }
 input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+  -webkit-appearance: none; width: 28px; height: 28px; border-radius: 50%;
   background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.4); cursor: pointer;
   transition: transform 0.2s var(--spring);
+  margin-top: -12px;
 }
 input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 
 /* PROGRESS BAR */
 .progress-bar { height: 8px; border-radius: 4px; background: var(--bg3); overflow: hidden; }
-.progress-fill { height: 100%; border-radius: 4px; background: var(--strava); transition: width 0.6s var(--spring); }
+.progress-fill { height: 100%; border-radius: 4px; background: var(--strava); transition: width 0.6s var(--spring); will-change: width; }
 
 /* BADGE */
 .badge {
@@ -163,33 +174,45 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 }
 #modal-overlay.visible { background: rgba(0,0,0,0.6); pointer-events: all; }
 #workout-modal {
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 201;
-  background: var(--bg2); border-radius: 24px 24px 0 0;
-  border-top: 1px solid var(--border);
-  transform: translateY(100%); transition: transform 0.4s var(--spring);
+  position: fixed; bottom: 0; left: 50%; z-index: 201;
+  width: 100%; max-width: 680px;
+  background: rgba(14,14,20,0.96);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-radius: 24px 24px 0 0;
+  border-top: 0.5px solid rgba(255,255,255,0.12);
+  transform: translateX(-50%) translateY(100%);
+  transition: transform 0.45s var(--ease-out);
+  will-change: transform;
   max-height: 90dvh; max-height: 90vh; overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: calc(24px + env(safe-area-inset-bottom));
 }
-#workout-modal.open { transform: translateY(0); }
+#workout-modal.open { transform: translateX(-50%) translateY(0); }
 .modal-handle {
-  width: 36px; height: 4px; border-radius: 2px; background: var(--border);
+  width: 36px; height: 4px; border-radius: 2px; background: rgba(255,255,255,0.28);
   margin: 12px auto 0;
 }
 .modal-header { padding: 20px 20px 0; }
 .modal-body { padding: 16px 20px; }
 
 /* ACCORDION */
-.accordion-item { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 10px; background: var(--card); }
+.accordion-item { border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; overflow: hidden; margin-bottom: 10px; background: rgba(22,22,31,0.72); }
 .accordion-header {
   display: flex; align-items: center; padding: 14px 16px; cursor: pointer;
   gap: 10px; user-select: none; transition: background 0.2s;
 }
-.accordion-header:active { background: var(--bg3); }
+.accordion-header:active { background: rgba(255,255,255,0.04); }
 .accordion-chevron { margin-left: auto; color: var(--text4); transition: transform 0.3s var(--spring); font-size: 18px; }
 .accordion-item.open .accordion-chevron { transform: rotate(180deg); }
-.accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-.accordion-item.open .accordion-body { max-height: 9999px; }
-.accordion-inner { padding: 0 16px 16px; }
+.accordion-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s var(--ease-in-out);
+  -webkit-overflow-scrolling: touch;
+}
+.accordion-item.open .accordion-body { grid-template-rows: 1fr; }
+.accordion-inner { overflow: hidden; padding: 0 16px 16px; }
 
 /* RING / DONUT */
 .ring-container { position: relative; display: inline-flex; align-items: center; justify-content: center; }
@@ -211,7 +234,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 .day-row:last-child { border-bottom: none; }
 .day-label { font-size: 12px; font-weight: 600; color: var(--text3); width: 28px; flex-shrink: 0; }
 .day-workout { flex: 1; }
-.day-workout-name { font-size: 14px; font-weight: 500; color: var(--text); }
+.day-workout-name { font-size: 14px; font-weight: 500; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .day-workout-sub { font-size: 12px; color: var(--text4); margin-top: 1px; }
 .day-row.rest .day-workout-name { color: var(--text4); font-weight: 400; }
 
@@ -229,7 +252,15 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 .macro-bar-fill { height: 100%; border-radius: 3px; transition: width 0.5s var(--spring); }
 
 /* STAT CARD */
-.stat-card { background: var(--card); border-radius: 16px; border: 1px solid var(--border); padding: 14px 16px; }
+.stat-card {
+  background: rgba(22,22,31,0.72);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+  padding: 14px 16px;
+}
 .stat-value { font-size: 26px; font-weight: 800; line-height: 1; }
 .stat-label { font-size: 12px; color: var(--text3); margin-top: 4px; font-weight: 500; }
 
@@ -274,7 +305,7 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
 #toast.show { transform: translateX(-50%) translateY(0); }
 
 /* STREAK FIRE */
-.streak-fire { font-size: 32px; animation: pulse-fire 2s infinite; }
+.streak-fire { font-size: 32px; animation: pulse-fire 2s infinite; will-change: transform; }
 @keyframes pulse-fire { 0%,100%{transform:scale(1)} 50%{transform:scale(1.1)} }
 
 /* CHART CONTAINER */
@@ -469,7 +500,13 @@ input[type=range]:active::-webkit-slider-thumb { transform: scale(1.2); }
     <div style="padding:calc(env(safe-area-inset-top)+16px) 16px 0">
 
       <div style="font-size:24px;font-weight:800;margin-bottom:4px">Ernährung</div>
-      <div style="font-size:14px;color:var(--text3);margin-bottom:20px">7-Tage Mahlzeitenplan</div>
+      <div style="font-size:14px;color:var(--text3);margin-bottom:12px">7-Tage Mahlzeitenplan</div>
+
+      <!-- DEFICIT BANNER -->
+      <div id="nutrition-deficit-banner" style="margin:0 0 16px;padding:10px 14px;background:rgba(252,76,2,0.12);border:1px solid rgba(252,76,2,0.25);border-radius:12px;font-size:13px;color:var(--text2);display:flex;align-items:center;gap:6px">
+        <span style="color:var(--strava)">🎯</span>
+        <span id="nutrition-banner-text">Defizit: −370 kcal · Ziel: 2.450 kcal</span>
+      </div>
 
       <!-- MACRO OVERVIEW -->
       <div class="section">
@@ -921,6 +958,25 @@ const NUTRITION_DAYS = [
   }
 ];
 
+// Base nutrition snapshot (immutable reference for scaling)
+const BASE_NUTRITION = NUTRITION_DAYS.map(d => ({...d, meals: d.meals.map(m => ({...m}))}));
+const BASE_TARGET = 2450; // standard target at −370 deficit
+
+function scaleNutrition(targetKcal) {
+  const factor = targetKcal / BASE_TARGET;
+  return BASE_NUTRITION.map(day => ({
+    ...day,
+    kcal: Math.round(day.kcal * factor),
+    p: Math.round(day.p * factor),
+    c: Math.round(day.c * factor),
+    f: Math.round(day.f * factor),
+    meals: day.meals.map(m => ({
+      ...m,
+      kcal: Math.round(m.kcal * factor)
+    }))
+  }));
+}
+
 // ============================================================
 // STATE
 // ============================================================
@@ -956,8 +1012,10 @@ function calcMacros(def) {
   return { target, proteinG: PROTEIN_G, fatG, carbsG };
 }
 
-function updateMacroDisplays() {
-  const m = calcMacros(deficit);
+function updateMacroDisplays(weekNum = null) {
+  const activeDeficit = (weekNum !== null && weekDeficits[weekNum] !== undefined)
+    ? weekDeficits[weekNum] : deficit;
+  const m = calcMacros(activeDeficit);
   // Training tab
   setEl('macro-kcal', m.target);
   setEl('macro-protein', `${m.proteinG}g`);
@@ -967,7 +1025,7 @@ function updateMacroDisplays() {
   // Settings tab
   setEl('settings-deficit-display', `−${deficit} kcal`);
   setEl('settings-target-kcal', `${m.target} kcal`);
-  // Nutrition tab
+  // Nutrition tab macros
   setEl('nutr-protein-val', `${m.proteinG}g`);
   setEl('nutr-carbs-val', `${m.carbsG}g`);
   setEl('nutr-fat-val', `${m.fatG}g`);
@@ -980,6 +1038,15 @@ function updateMacroDisplays() {
   setWidth('nutr-fat-bar', fPct);
   setEl('macro-donut-kcal', m.target);
   updateMacroDonut(m.proteinG, m.carbsG, m.fatG);
+  // Nutrition deficit banner
+  const bannerDef = weekNum !== null && weekDeficits[weekNum] !== undefined
+    ? weekDeficits[weekNum] : deficit;
+  const bannerLabel = weekNum !== null
+    ? `W${weekNum} · Defizit: −${bannerDef} kcal · Ziel: ${m.target.toLocaleString('de-DE')} kcal`
+    : `Defizit: −${bannerDef} kcal · Ziel: ${m.target.toLocaleString('de-DE')} kcal`;
+  setEl('nutrition-banner-text', bannerLabel);
+  // Re-render nutrition meals with scaled kcal
+  renderNutritionDays(m.target);
 }
 
 // ============================================================
@@ -1173,6 +1240,7 @@ function setWeekDeficit(weekNum, val) {
   weekDeficits[weekNum] = parseInt(val);
   setEl('wdef-'+weekNum, `−${val} kcal`);
   save();
+  updateMacroDisplays(weekNum);
 }
 
 function toggleWorkout(e, key, weekNum) {
@@ -1361,15 +1429,21 @@ function toggleWorkoutFromModal(weekNum, day) {
 }
 
 // SWIPE DOWN TO CLOSE MODAL
+let _swipeStartY = 0, _swipeStartT = 0;
+let _swipeStartHandler = null, _swipeEndHandler = null;
 function setupModalSwipe() {
   const modal = el('workout-modal');
-  let startY = 0, startT = 0;
-  modal.addEventListener('touchstart', e=>{startY=e.touches[0].clientY;startT=Date.now();},{passive:true,once:true});
-  modal.addEventListener('touchend', e=>{
-    const dy = e.changedTouches[0].clientY - startY;
-    const dt = Date.now() - startT;
+  // Remove previous listeners if any
+  if(_swipeStartHandler) modal.removeEventListener('touchstart', _swipeStartHandler);
+  if(_swipeEndHandler) modal.removeEventListener('touchend', _swipeEndHandler);
+  _swipeStartHandler = e => { _swipeStartY = e.touches[0].clientY; _swipeStartT = Date.now(); };
+  _swipeEndHandler = e => {
+    const dy = e.changedTouches[0].clientY - _swipeStartY;
+    const dt = Date.now() - _swipeStartT;
     if(dy > 80 && dt < 400) closeModal();
-  },{once:true});
+  };
+  modal.addEventListener('touchstart', _swipeStartHandler, {passive:true});
+  modal.addEventListener('touchend', _swipeEndHandler);
 }
 
 // ============================================================
@@ -1454,17 +1528,34 @@ function downloadZwo(weekNum, day) {
 // ============================================================
 // NUTRITION BUILDER
 // ============================================================
-function buildNutrition() {
+function renderNutritionDays(targetKcal) {
+  // Save open accordion states
+  const openStates = {};
+  NUTRITION_DAYS.forEach(d => {
+    const item = el('nutr-acc-'+d.name);
+    if(item) openStates[d.name] = item.classList.contains('open');
+  });
+  const scaledDays = scaleNutrition(targetKcal);
+  buildNutrition(scaledDays);
+  // Restore open states
+  NUTRITION_DAYS.forEach(d => {
+    if(openStates[d.name]) {
+      const item = el('nutr-acc-'+d.name);
+      if(item) item.classList.add('open');
+    }
+  });
+}
+
+function buildNutrition(days = null) {
+  const renderDays = days || NUTRITION_DAYS;
   const container = el('nutrition-days');
   container.innerHTML = '';
-  NUTRITION_DAYS.forEach(day => {
+  renderDays.forEach(day => {
     const done = nutritionDone[day.name];
     const item = document.createElement('div');
     item.className = 'accordion-item';
     item.id = 'nutr-acc-'+day.name;
 
-    const m = calcMacros(deficit);
-    const pDiff = day.p - m.proteinG;
     const badge = done ? '<span class="badge badge-green">✓ Eingehalten</span>' : '';
 
     item.innerHTML = `
@@ -1728,7 +1819,7 @@ function initSettings() {
     updateMacroDisplays();
   });
 
-  el('gist-token-input').addEventListener('change', () => {
+  el('gist-token-input').addEventListener('input', () => {
     localStorage.setItem('gistToken', el('gist-token-input').value);
     updateSyncStatus();
   });
@@ -1798,6 +1889,7 @@ async function syncToGist(data) {
   } catch(e) {
     dot.className='sync-dot err';
     el('sync-status').textContent='Sync-Fehler: '+e.message;
+    showToast('❌ Sync fehlgeschlagen: '+e.message);
   }
 }
 
