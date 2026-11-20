@@ -14,7 +14,7 @@ import struct
 import sys
 from xml.sax.saxutils import escape
 
-FTP = int(sys.argv[1]) if len(sys.argv) > 1 else 239
+FTP = int(sys.argv[1]) if len(sys.argv) > 1 else 225
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # --------------------------------------------------------------------------
@@ -42,69 +42,69 @@ def rep(n, *block):
 
 WORKOUTS = [
     {
-        "file": "01_Grundlage_Tempo_2h30",
+        "file": "01_Wiedereinstieg_2h",
         "date": dt.date(2026, 11, 21),
-        "title": "Grundlage 2:30 h + Tempo",
+        "title": "Wiedereinstieg: 2 h Grundlage",
         "core": True,
-        "desc": "Wiedereinstieg aufs Rad nach der Pause: 2:30 h ruhige Grundlage (Z2) mit "
-                "3 x 6 min Tempo (85 %). Gern draussen und bergig. Ab der ersten Stunde "
-                "60 g Kohlenhydrate pro Stunde essen/trinken - das ueben wir fuer die 150 km.",
+        "desc": "Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu "
+                "4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt "
+                "wieder rund wird. Keine Intervalle - die Beine sollen sich wieder ans Rad gewoehnen.",
         "steps": [
-            wu(10),
-            st("Z2 Grundlage", 60 * 60, 68),
-            *rep(3, st("Tempo", 6 * 60, 85, "interval"), st("locker", 4 * 60, 62, "rest")),
-            st("Z2 Grundlage", 45 * 60, 67),
+            wu(10, 50, 68),
+            st("Z2 Grundlage", 40 * 60, 67),
+            *rep(4, st("TF 100-110 rpm", 60, 65, "interval"), st("Z2", 4 * 60, 67)),
+            st("Z2 Grundlage", 45 * 60, 68),
             cd(5),
         ],
     },
     {
-        "file": "02_SweetSpot_Chapmans_3x10",
+        "file": "02_Tempo_3x10",
         "date": dt.date(2026, 11, 24),
-        "title": "Sweet Spot 'Chapman's Peak' 3x10 min",
+        "title": "Tempo 3x10 min",
         "core": True,
-        "desc": "3 x 10 min @ 89 % FTP mit Kletter-Trittfrequenz 70-80 rpm, 5 min Pause. "
-                "Entspricht ungefaehr dem Anstieg auf Chapman's Peak im Gruppentempo.",
+        "desc": "3 x 10 min Tempo @ 83 % FTP, 5 min locker dazwischen, 80-90 rpm. "
+                "Erster laengerer Reiz nach der Pause - soll 'angenehm anstrengend' sein, "
+                "du kannst noch in kurzen Saetzen sprechen.",
         "steps": [
             wu(10),
-            *rep(2, st("Aktivierung", 60, 100, "interval"), st("locker", 120, 55, "rest")),
-            *rep(3, st("SS 70-80 rpm", 10 * 60, 89, "interval"), st("Pause", 5 * 60, 55, "rest")),
-            st("Z2", 6 * 60, 65),
-            cd(8),
+            st("Z2", 5 * 60, 65),
+            *rep(3, st("Tempo 80-90 rpm", 10 * 60, 83, "interval"), st("locker", 5 * 60, 58, "rest")),
+            st("Z2", 5 * 60, 65),
+            cd(5),
         ],
     },
     {
-        "file": "03_VO2max_Attacken_5x3",
+        "file": "03_Grundlage_Antritte_90",
         "date": dt.date(2026, 11, 26),
-        "title": "VO2max 5x3 min (Attacken am Anstieg)",
+        "title": "Grundlage 90 min + kurze Antritte (optional)",
         "core": False,
-        "desc": "5 x 3 min @ 112 % FTP, 3 min Pause. Fuer die Momente, in denen die Gruppe "
-                "am Suikerbossie oder an Chapman's anzieht. Wegen der Radpause bewusst etwas "
-                "unter dem ueblichen Niveau (112 statt 118 %).",
+        "desc": "90 min Z2 mit 6 kurzen Antritten (15 s zuegig, nicht maximal) - weckt die "
+                "Spritzigkeit fuer die Gruppe, ohne zu ermueden. Nach einem harten Padel-Tag "
+                "die Antritte weglassen und nur Grundlage fahren.",
         "steps": [
-            wu(12),
-            *rep(3, st("Openers", 30, 110, "interval"), st("locker", 30, 55, "rest")),
-            st("locker", 4 * 60, 55, "rest"),
-            *rep(5, st("VO2max", 3 * 60, 112, "interval"), st("Pause", 3 * 60, 50, "rest")),
-            st("Z2", 10 * 60, 65),
-            cd(6, 55, 45),
+            wu(10),
+            st("Z2 Grundlage", 30 * 60, 68),
+            *rep(6, st("Antritt", 15, 130, "interval"), st("locker", 165, 60, "rest")),
+            st("Z2 Grundlage", 27 * 60, 68),
+            cd(5),
         ],
     },
     {
-        "file": "04_Lange_Ausfahrt_3h30",
+        "file": "04_Lange_Ausfahrt_3h",
         "date": dt.date(2026, 11, 28),
-        "title": "Lange Ausfahrt 3:30 h",
+        "title": "Lange Ausfahrt 3 h",
         "core": True,
-        "desc": "Generalprobe fuer die Sonntagsrunde: 3:30 h Z2 mit 2 x 12 min Sweet Spot "
-                "(am besten an einem Anstieg). 60-80 g Kohlenhydrate/h, alle 15-20 min "
-                "trinken. Draussen fahren, der ROAM zeigt dir die Zielbereiche.",
+        "desc": "3 h Z2 mit 2 x 10 min Sweet Spot (88 %) - am besten an einem Anstieg "
+                "(z. B. Koenigstuhl). Wichtigster Baustein fuer die 150 km: Sitzfleisch und "
+                "Essen ueben. 60-80 g Kohlenhydrate pro Stunde ab Minute 30.",
         "steps": [
             wu(15),
-            st("Z2 Grundlage", 75 * 60, 68),
-            st("SS Anstieg 1", 12 * 60, 88, "interval"),
+            st("Z2 Grundlage", 60 * 60, 68),
+            st("SS Anstieg 1", 10 * 60, 88, "interval"),
             st("Z2 locker", 10 * 60, 63, "rest"),
-            st("SS Anstieg 2", 12 * 60, 88, "interval"),
-            st("Z2 Grundlage", 75 * 60, 67),
-            cd(11),
+            st("SS Anstieg 2", 10 * 60, 88, "interval"),
+            st("Z2 Grundlage", 65 * 60, 67),
+            cd(10),
         ],
     },
     {
@@ -113,7 +113,7 @@ WORKOUTS = [
         "title": "Lockeres Ausrollen (optional)",
         "core": False,
         "desc": "60 min ganz locker (Z1/Z2, unter 62 %). Beine durchbewegen nach dem langen "
-                "Samstag. Alternativ: komplett frei oder ein lockeres Padel-Match.",
+                "Samstag. Alternativ: komplett frei.",
         "steps": [
             wu(5, 45, 58),
             st("locker Z1-Z2", 50 * 60, 58),
@@ -121,21 +121,18 @@ WORKOUTS = [
         ],
     },
     {
-        "file": "06_OverUnder_Gruppenfahrt",
+        "file": "06_SweetSpot_Chapmans_3x10",
         "date": dt.date(2026, 12, 1),
-        "title": "Over-Unders (Gruppenfahrt)",
+        "title": "Sweet Spot 'Chapman's Peak' 3x10 min",
         "core": True,
-        "desc": "3 Bloecke a 12 min: jeweils 4 x (2 min @ 92 % / 1 min @ 110 %), 5 min Pause. "
-                "Simuliert das Tempo in der Gruppe: am Anstieg knapp unter der Schwelle "
-                "mitfahren und bei jedem Antritt kurz drueber gehen.",
+        "desc": "3 x 10 min @ 89 % FTP mit Kletter-Trittfrequenz 70-80 rpm, 5 min Pause. "
+                "Entspricht etwa dem Anstieg auf Chapman's Peak im Gruppentempo. "
+                "Erst jetzt, nach 1,5 Wochen Wiedereinstieg, kommt die Schwelle dazu.",
         "steps": [
-            wu(15),
-            *rep(2, st("Aktivierung", 60, 105, "interval"), st("locker", 120, 55, "rest")),
-            *[s for b in range(1, 4) for s in (
-                *[(f"B{b} {n}", d, lo, hi, it) for n, d, lo, hi, it in rep(
-                    4, st("Under", 120, 92, "interval"), st("Over", 60, 110, "interval"))],
-                (f"B{b} Pause", 5 * 60, 55, 55, "rest"),
-            )],
+            wu(10),
+            *rep(2, st("Aktivierung", 60, 100, "interval"), st("locker", 120, 55, "rest")),
+            *rep(3, st("SS 70-80 rpm", 10 * 60, 89, "interval"), st("Pause", 5 * 60, 55, "rest")),
+            st("Z2", 6 * 60, 65),
             cd(8),
         ],
     },
@@ -281,16 +278,31 @@ def plan_md():
         out.append(f"| {i} | {d} | {w['title']} | {total // 60} min | {np_:.2f} | {tss:.0f} | {core} |")
     out += [
         "",
-        f"FTP {FTP} W aus Strava (manuell gesetzt). 20-min-Bestwert 2026: 263 W (02.10.) -> die FTP ist eher",
-        "konservativ. Letzte Radfahrt laut Strava: 28.10., seitdem 3-5x/Woche Padel. Deshalb startet der Plan",
-        "mit Grundlage und etwas reduzierter VO2max-Intensitaet.",
+        "## Ausgangslage laut Strava",
         "",
-        "**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6 (die langen Fahrten sind fuer die 150 km",
-        "am wichtigsten). **5 oder 6?** Nimm 3 und/oder 5 dazu.",
+        "| Monat | Radfahrten | km (ca.) | Bemerkung |",
+        "|---|---|---|---|",
+        "| Juni | 15 | 850 | 170 km (05.06.), 149 km / 3.100 hm (13.06.) |",
+        "| Juli | 6 | 250 | |",
+        "| August | 13 | 635 | bis 95 km |",
+        "| September | 12 | 520 | bis 83 km, ab Mitte Sept. 4-5x/Woche Padel |",
+        "| Oktober | 5 | 175 | letzte Fahrt mit Watt: 16.10., letzte Fahrt: 28.10. |",
+        "| November | 0 | 0 | nur Padel (4-5x/Woche, je 1,5-2 h) |",
         "",
-        "Freie Tage fuers Rad: So 22., Mo 23., Mi 25., Fr 27., Mo 30.11. Padel passt gut auf Mo/Mi -",
-        "aber **kein langes Padel am Tag vor Einheit 1, 4 oder 6**, und nie zwei harte Einheiten",
-        "(2, 3, 6) an aufeinanderfolgenden Tagen.",
+        "- **Letzte Leistungswerte:** 02.10. 20 min 263 W; 16.10. Koenigstuhl 40 min @ 217 W, 20 min 243 W.",
+        "- **FTP in Strava:** 239 W (manuell). Nach gut 3 Wochen ohne Rad rechne ich mit 5-8 % weniger",
+        f"  radspezifischer Leistung -> fuer diesen Block **FTP {FTP} W**. Bitte so in der Wahoo-App eintragen.",
+        "- **Gut:** solide Sommer-Grundlage und durch Padel eine gute Herz-Kreislauf-Fitness.",
+        "- **Fehlt:** Sitzfleisch und Dauerleistung auf dem Rad - genau das braucht die 150-km-Runde.",
+        "",
+        "**Aufbau:** Woche 1 nur Grundlage, Tempo und eine lange Fahrt (keine harten Intervalle - Padel",
+        "liefert schon genug Intensitaet). Ab 01.12. kommt Sweet Spot in Anstiegslaenge dazu. VO2max und",
+        "Over-Unders folgen erst in Kapstadt, wenn die Basis wieder steht.",
+        "",
+        "**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6. **5 oder 6?** Nimm 3 und/oder 5 dazu.",
+        "",
+        "**Padel in diesen 1,5 Wochen:** auf 2-3x pro Woche reduzieren - die Zeit geht ins Rad.",
+        "Gut passen So 22., Mo 23. und Mi 25.11. **Fr 27. und Mo 30. frei lassen** (Vortag von 4 und 6).",
         "",
         "## Sonntagsrunde 150 km - Pacing",
         "",

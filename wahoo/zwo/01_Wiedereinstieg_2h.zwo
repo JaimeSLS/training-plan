@@ -1,0 +1,21 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Wiedereinstieg 2h</name>
+  <description>Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu 4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt wieder rund wird. Keine Intervalle - die Beine sollen sich wieder ans Rad gewoehnen.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.68"/>
+    <SteadyState Duration="2400" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="60" Power="0.65"><textevent timeoffset="0" message="TF 100-110 rpm 1/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.67"><textevent timeoffset="0" message="Z2 1/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.65"><textevent timeoffset="0" message="TF 100-110 rpm 2/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.67"><textevent timeoffset="0" message="Z2 2/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.65"><textevent timeoffset="0" message="TF 100-110 rpm 3/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.67"><textevent timeoffset="0" message="Z2 3/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.65"><textevent timeoffset="0" message="TF 100-110 rpm 4/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.67"><textevent timeoffset="0" message="Z2 4/4"/></SteadyState>
+    <SteadyState Duration="2700" Power="0.68"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>

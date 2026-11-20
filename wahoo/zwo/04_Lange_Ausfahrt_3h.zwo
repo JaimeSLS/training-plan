@@ -1,0 +1,16 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Lange Ausfahrt 3h</name>
+  <description>3 h Z2 mit 2 x 10 min Sweet Spot (88 %) - am besten an einem Anstieg (z. B. Koenigstuhl). Wichtigster Baustein fuer die 150 km: Sitzfleisch und Essen ueben. 60-80 g Kohlenhydrate pro Stunde ab Minute 30.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="900" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="3600" Power="0.68"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="600" Power="0.88"><textevent timeoffset="0" message="SS Anstieg 1"/></SteadyState>
+    <SteadyState Duration="600" Power="0.63"><textevent timeoffset="0" message="Z2 locker"/></SteadyState>
+    <SteadyState Duration="600" Power="0.88"><textevent timeoffset="0" message="SS Anstieg 2"/></SteadyState>
+    <SteadyState Duration="3900" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="600" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>

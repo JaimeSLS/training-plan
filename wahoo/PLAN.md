@@ -1,163 +1,153 @@
 # Wahoo-Workouts: Fit fuer die Kapstadt-Saison (21.11. - 01.12.2026)
 
-Alle Ziele sind in **% FTP** hinterlegt. Die Watt-Angaben unten gelten fuer **FTP 239 W**;
+Alle Ziele sind in **% FTP** hinterlegt. Die Watt-Angaben unten gelten fuer **FTP 225 W**;
 der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen ist.
 
 | # | Datum | Workout | Dauer | IF | TSS | Pflicht? |
 |---|-------|---------|-------|----|-----|----------|
-| 1 | Sa 21.11. | Grundlage 2:30 h + Tempo | 150 min | 0.69 | 121 | Kern |
-| 2 | Di 24.11. | Sweet Spot 'Chapman's Peak' 3x10 min | 75 min | 0.77 | 73 | Kern |
-| 3 | Do 26.11. | VO2max 5x3 min (Attacken am Anstieg) | 65 min | 0.83 | 75 | optional |
-| 4 | Sa 28.11. | Lange Ausfahrt 3:30 h | 210 min | 0.70 | 171 | Kern |
+| 1 | Sa 21.11. | Wiedereinstieg: 2 h Grundlage | 120 min | 0.66 | 88 | Kern |
+| 2 | Di 24.11. | Tempo 3x10 min | 70 min | 0.73 | 62 | Kern |
+| 3 | Do 26.11. | Grundlage 90 min + kurze Antritte (optional) | 90 min | 0.69 | 72 | optional |
+| 4 | Sa 28.11. | Lange Ausfahrt 3 h | 180 min | 0.70 | 146 | Kern |
 | 5 | So 29.11. | Lockeres Ausrollen (optional) | 60 min | 0.57 | 32 | optional |
-| 6 | Di 01.12. | Over-Unders (Gruppenfahrt) | 80 min | 0.85 | 96 | Kern |
+| 6 | Di 01.12. | Sweet Spot 'Chapman's Peak' 3x10 min | 75 min | 0.77 | 73 | Kern |
 
-FTP 239 W aus Strava (manuell gesetzt). 20-min-Bestwert 2026: 263 W (02.10.) -> die FTP ist eher
-konservativ. Letzte Radfahrt laut Strava: 28.10., seitdem 3-5x/Woche Padel. Deshalb startet der Plan
-mit Grundlage und etwas reduzierter VO2max-Intensitaet.
+## Ausgangslage laut Strava
 
-**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6 (die langen Fahrten sind fuer die 150 km
-am wichtigsten). **5 oder 6?** Nimm 3 und/oder 5 dazu.
+| Monat | Radfahrten | km (ca.) | Bemerkung |
+|---|---|---|---|
+| Juni | 15 | 850 | 170 km (05.06.), 149 km / 3.100 hm (13.06.) |
+| Juli | 6 | 250 | |
+| August | 13 | 635 | bis 95 km |
+| September | 12 | 520 | bis 83 km, ab Mitte Sept. 4-5x/Woche Padel |
+| Oktober | 5 | 175 | letzte Fahrt mit Watt: 16.10., letzte Fahrt: 28.10. |
+| November | 0 | 0 | nur Padel (4-5x/Woche, je 1,5-2 h) |
 
-Freie Tage fuers Rad: So 22., Mo 23., Mi 25., Fr 27., Mo 30.11. Padel passt gut auf Mo/Mi -
-aber **kein langes Padel am Tag vor Einheit 1, 4 oder 6**, und nie zwei harte Einheiten
-(2, 3, 6) an aufeinanderfolgenden Tagen.
+- **Letzte Leistungswerte:** 02.10. 20 min 263 W; 16.10. Koenigstuhl 40 min @ 217 W, 20 min 243 W.
+- **FTP in Strava:** 239 W (manuell). Nach gut 3 Wochen ohne Rad rechne ich mit 5-8 % weniger
+  radspezifischer Leistung -> fuer diesen Block **FTP 225 W**. Bitte so in der Wahoo-App eintragen.
+- **Gut:** solide Sommer-Grundlage und durch Padel eine gute Herz-Kreislauf-Fitness.
+- **Fehlt:** Sitzfleisch und Dauerleistung auf dem Rad - genau das braucht die 150-km-Runde.
+
+**Aufbau:** Woche 1 nur Grundlage, Tempo und eine lange Fahrt (keine harten Intervalle - Padel
+liefert schon genug Intensitaet). Ab 01.12. kommt Sweet Spot in Anstiegslaenge dazu. VO2max und
+Over-Unders folgen erst in Kapstadt, wenn die Basis wieder steht.
+
+**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6. **5 oder 6?** Nimm 3 und/oder 5 dazu.
+
+**Padel in diesen 1,5 Wochen:** auf 2-3x pro Woche reduzieren - die Zeit geht ins Rad.
+Gut passen So 22., Mo 23. und Mi 25.11. **Fr 27. und Mo 30. frei lassen** (Vortag von 4 und 6).
 
 ## Sonntagsrunde 150 km - Pacing
 
-- **Flach / in der Gruppe:** 60-72 % FTP = **143-172 W**. Im Windschatten ruhig darunter.
-- **Anstiege (Chapman's, Suikerbossie, Smitswinkel):** max. 85-90 % = **203-215 W**.
-  Nicht ueber 239 W gehen, auch wenn die Gruppe anzieht - lieber kurz abreissen lassen und oben wieder ran.
-- **Ziel-Normalized-Power** fuer 5+ h: ca. 65-70 % = **155-167 W**.
+- **Flach / in der Gruppe:** 60-72 % FTP = **135-162 W**. Im Windschatten ruhig darunter.
+- **Anstiege (Chapman's, Suikerbossie, Smitswinkel):** max. 85-90 % = **191-202 W**.
+  Nicht ueber 225 W gehen, auch wenn die Gruppe anzieht - lieber kurz abreissen lassen und oben wieder ran.
+- **Ziel-Normalized-Power** fuer 5+ h: ca. 65-70 % = **146-158 W**.
 - **Essen:** 60-80 g Kohlenhydrate pro Stunde ab Minute 30, 500-750 ml pro Stunde trinken
   (bei Kapstadt-Hitze und Suedostwind eher mehr, mit Salz).
 - **Coffee Rides unter der Woche** (Sea Point <-> Chapman's): als Grundlage zaehlen sie, wenn du die
   Anstiege im Sweet-Spot-Bereich faehrst - dann ersetzen sie Einheit 2 oder 6.
 
-## 1. Grundlage 2:30 h + Tempo - 150 min
+## 1. Wiedereinstieg: 2 h Grundlage - 120 min
 
-Wiedereinstieg aufs Rad nach der Pause: 2:30 h ruhige Grundlage (Z2) mit 3 x 6 min Tempo (85 %). Gern draussen und bergig. Ab der ersten Stunde 60 g Kohlenhydrate pro Stunde essen/trinken - das ueben wir fuer die 150 km.
-
-| Abschnitt | Dauer | % FTP | Watt |
-|---|---|---|---|
-| Einfahren | 10:00 | 50 -> 75 | 120 -> 179 |
-| Z2 Grundlage | 60:00 | 68 | 163 |
-| Tempo 1/3 | 6:00 | 85 | 203 |
-| locker 1/3 | 4:00 | 62 | 148 |
-| Tempo 2/3 | 6:00 | 85 | 203 |
-| locker 2/3 | 4:00 | 62 | 148 |
-| Tempo 3/3 | 6:00 | 85 | 203 |
-| locker 3/3 | 4:00 | 62 | 148 |
-| Z2 Grundlage | 45:00 | 67 | 160 |
-| Ausfahren | 5:00 | 60 -> 45 | 143 -> 108 |
-
-## 2. Sweet Spot 'Chapman's Peak' 3x10 min - 75 min
-
-3 x 10 min @ 89 % FTP mit Kletter-Trittfrequenz 70-80 rpm, 5 min Pause. Entspricht ungefaehr dem Anstieg auf Chapman's Peak im Gruppentempo.
+Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu 4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt wieder rund wird. Keine Intervalle - die Beine sollen sich wieder ans Rad gewoehnen.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
-| Einfahren | 10:00 | 50 -> 75 | 120 -> 179 |
-| Aktivierung 1/2 | 1:00 | 100 | 239 |
-| locker 1/2 | 2:00 | 55 | 131 |
-| Aktivierung 2/2 | 1:00 | 100 | 239 |
-| locker 2/2 | 2:00 | 55 | 131 |
-| SS 70-80 rpm 1/3 | 10:00 | 89 | 213 |
-| Pause 1/3 | 5:00 | 55 | 131 |
-| SS 70-80 rpm 2/3 | 10:00 | 89 | 213 |
-| Pause 2/3 | 5:00 | 55 | 131 |
-| SS 70-80 rpm 3/3 | 10:00 | 89 | 213 |
-| Pause 3/3 | 5:00 | 55 | 131 |
-| Z2 | 6:00 | 65 | 155 |
-| Ausfahren | 8:00 | 60 -> 45 | 143 -> 108 |
+| Einfahren | 10:00 | 50 -> 68 | 112 -> 153 |
+| Z2 Grundlage | 40:00 | 67 | 151 |
+| TF 100-110 rpm 1/4 | 1:00 | 65 | 146 |
+| Z2 1/4 | 4:00 | 67 | 151 |
+| TF 100-110 rpm 2/4 | 1:00 | 65 | 146 |
+| Z2 2/4 | 4:00 | 67 | 151 |
+| TF 100-110 rpm 3/4 | 1:00 | 65 | 146 |
+| Z2 3/4 | 4:00 | 67 | 151 |
+| TF 100-110 rpm 4/4 | 1:00 | 65 | 146 |
+| Z2 4/4 | 4:00 | 67 | 151 |
+| Z2 Grundlage | 45:00 | 68 | 153 |
+| Ausfahren | 5:00 | 60 -> 45 | 135 -> 101 |
 
-## 3. VO2max 5x3 min (Attacken am Anstieg) - 65 min
+## 2. Tempo 3x10 min - 70 min
 
-5 x 3 min @ 112 % FTP, 3 min Pause. Fuer die Momente, in denen die Gruppe am Suikerbossie oder an Chapman's anzieht. Wegen der Radpause bewusst etwas unter dem ueblichen Niveau (112 statt 118 %).
-
-| Abschnitt | Dauer | % FTP | Watt |
-|---|---|---|---|
-| Einfahren | 12:00 | 50 -> 75 | 120 -> 179 |
-| Openers 1/3 | 0:30 | 110 | 263 |
-| locker 1/3 | 0:30 | 55 | 131 |
-| Openers 2/3 | 0:30 | 110 | 263 |
-| locker 2/3 | 0:30 | 55 | 131 |
-| Openers 3/3 | 0:30 | 110 | 263 |
-| locker 3/3 | 0:30 | 55 | 131 |
-| locker | 4:00 | 55 | 131 |
-| VO2max 1/5 | 3:00 | 112 | 268 |
-| Pause 1/5 | 3:00 | 50 | 120 |
-| VO2max 2/5 | 3:00 | 112 | 268 |
-| Pause 2/5 | 3:00 | 50 | 120 |
-| VO2max 3/5 | 3:00 | 112 | 268 |
-| Pause 3/5 | 3:00 | 50 | 120 |
-| VO2max 4/5 | 3:00 | 112 | 268 |
-| Pause 4/5 | 3:00 | 50 | 120 |
-| VO2max 5/5 | 3:00 | 112 | 268 |
-| Pause 5/5 | 3:00 | 50 | 120 |
-| Z2 | 10:00 | 65 | 155 |
-| Ausfahren | 6:00 | 55 -> 45 | 131 -> 108 |
-
-## 4. Lange Ausfahrt 3:30 h - 210 min
-
-Generalprobe fuer die Sonntagsrunde: 3:30 h Z2 mit 2 x 12 min Sweet Spot (am besten an einem Anstieg). 60-80 g Kohlenhydrate/h, alle 15-20 min trinken. Draussen fahren, der ROAM zeigt dir die Zielbereiche.
+3 x 10 min Tempo @ 83 % FTP, 5 min locker dazwischen, 80-90 rpm. Erster laengerer Reiz nach der Pause - soll 'angenehm anstrengend' sein, du kannst noch in kurzen Saetzen sprechen.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
-| Einfahren | 15:00 | 50 -> 75 | 120 -> 179 |
-| Z2 Grundlage | 75:00 | 68 | 163 |
-| SS Anstieg 1 | 12:00 | 88 | 210 |
-| Z2 locker | 10:00 | 63 | 151 |
-| SS Anstieg 2 | 12:00 | 88 | 210 |
-| Z2 Grundlage | 75:00 | 67 | 160 |
-| Ausfahren | 11:00 | 60 -> 45 | 143 -> 108 |
+| Einfahren | 10:00 | 50 -> 75 | 112 -> 169 |
+| Z2 | 5:00 | 65 | 146 |
+| Tempo 80-90 rpm 1/3 | 10:00 | 83 | 187 |
+| locker 1/3 | 5:00 | 58 | 130 |
+| Tempo 80-90 rpm 2/3 | 10:00 | 83 | 187 |
+| locker 2/3 | 5:00 | 58 | 130 |
+| Tempo 80-90 rpm 3/3 | 10:00 | 83 | 187 |
+| locker 3/3 | 5:00 | 58 | 130 |
+| Z2 | 5:00 | 65 | 146 |
+| Ausfahren | 5:00 | 60 -> 45 | 135 -> 101 |
+
+## 3. Grundlage 90 min + kurze Antritte (optional) - 90 min
+
+90 min Z2 mit 6 kurzen Antritten (15 s zuegig, nicht maximal) - weckt die Spritzigkeit fuer die Gruppe, ohne zu ermueden. Nach einem harten Padel-Tag die Antritte weglassen und nur Grundlage fahren.
+
+| Abschnitt | Dauer | % FTP | Watt |
+|---|---|---|---|
+| Einfahren | 10:00 | 50 -> 75 | 112 -> 169 |
+| Z2 Grundlage | 30:00 | 68 | 153 |
+| Antritt 1/6 | 0:15 | 130 | 292 |
+| locker 1/6 | 2:45 | 60 | 135 |
+| Antritt 2/6 | 0:15 | 130 | 292 |
+| locker 2/6 | 2:45 | 60 | 135 |
+| Antritt 3/6 | 0:15 | 130 | 292 |
+| locker 3/6 | 2:45 | 60 | 135 |
+| Antritt 4/6 | 0:15 | 130 | 292 |
+| locker 4/6 | 2:45 | 60 | 135 |
+| Antritt 5/6 | 0:15 | 130 | 292 |
+| locker 5/6 | 2:45 | 60 | 135 |
+| Antritt 6/6 | 0:15 | 130 | 292 |
+| locker 6/6 | 2:45 | 60 | 135 |
+| Z2 Grundlage | 27:00 | 68 | 153 |
+| Ausfahren | 5:00 | 60 -> 45 | 135 -> 101 |
+
+## 4. Lange Ausfahrt 3 h - 180 min
+
+3 h Z2 mit 2 x 10 min Sweet Spot (88 %) - am besten an einem Anstieg (z. B. Koenigstuhl). Wichtigster Baustein fuer die 150 km: Sitzfleisch und Essen ueben. 60-80 g Kohlenhydrate pro Stunde ab Minute 30.
+
+| Abschnitt | Dauer | % FTP | Watt |
+|---|---|---|---|
+| Einfahren | 15:00 | 50 -> 75 | 112 -> 169 |
+| Z2 Grundlage | 60:00 | 68 | 153 |
+| SS Anstieg 1 | 10:00 | 88 | 198 |
+| Z2 locker | 10:00 | 63 | 142 |
+| SS Anstieg 2 | 10:00 | 88 | 198 |
+| Z2 Grundlage | 65:00 | 67 | 151 |
+| Ausfahren | 10:00 | 60 -> 45 | 135 -> 101 |
 
 ## 5. Lockeres Ausrollen (optional) - 60 min
 
-60 min ganz locker (Z1/Z2, unter 62 %). Beine durchbewegen nach dem langen Samstag. Alternativ: komplett frei oder ein lockeres Padel-Match.
+60 min ganz locker (Z1/Z2, unter 62 %). Beine durchbewegen nach dem langen Samstag. Alternativ: komplett frei.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
-| Einfahren | 5:00 | 45 -> 58 | 108 -> 139 |
-| locker Z1-Z2 | 50:00 | 58 | 139 |
-| Ausfahren | 5:00 | 55 -> 45 | 131 -> 108 |
+| Einfahren | 5:00 | 45 -> 58 | 101 -> 130 |
+| locker Z1-Z2 | 50:00 | 58 | 130 |
+| Ausfahren | 5:00 | 55 -> 45 | 124 -> 101 |
 
-## 6. Over-Unders (Gruppenfahrt) - 80 min
+## 6. Sweet Spot 'Chapman's Peak' 3x10 min - 75 min
 
-3 Bloecke a 12 min: jeweils 4 x (2 min @ 92 % / 1 min @ 110 %), 5 min Pause. Simuliert das Tempo in der Gruppe: am Anstieg knapp unter der Schwelle mitfahren und bei jedem Antritt kurz drueber gehen.
+3 x 10 min @ 89 % FTP mit Kletter-Trittfrequenz 70-80 rpm, 5 min Pause. Entspricht etwa dem Anstieg auf Chapman's Peak im Gruppentempo. Erst jetzt, nach 1,5 Wochen Wiedereinstieg, kommt die Schwelle dazu.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
-| Einfahren | 15:00 | 50 -> 75 | 120 -> 179 |
-| Aktivierung 1/2 | 1:00 | 105 | 251 |
-| locker 1/2 | 2:00 | 55 | 131 |
-| Aktivierung 2/2 | 1:00 | 105 | 251 |
-| locker 2/2 | 2:00 | 55 | 131 |
-| B1 Under 1/4 | 2:00 | 92 | 220 |
-| B1 Over 1/4 | 1:00 | 110 | 263 |
-| B1 Under 2/4 | 2:00 | 92 | 220 |
-| B1 Over 2/4 | 1:00 | 110 | 263 |
-| B1 Under 3/4 | 2:00 | 92 | 220 |
-| B1 Over 3/4 | 1:00 | 110 | 263 |
-| B1 Under 4/4 | 2:00 | 92 | 220 |
-| B1 Over 4/4 | 1:00 | 110 | 263 |
-| B1 Pause | 5:00 | 55 | 131 |
-| B2 Under 1/4 | 2:00 | 92 | 220 |
-| B2 Over 1/4 | 1:00 | 110 | 263 |
-| B2 Under 2/4 | 2:00 | 92 | 220 |
-| B2 Over 2/4 | 1:00 | 110 | 263 |
-| B2 Under 3/4 | 2:00 | 92 | 220 |
-| B2 Over 3/4 | 1:00 | 110 | 263 |
-| B2 Under 4/4 | 2:00 | 92 | 220 |
-| B2 Over 4/4 | 1:00 | 110 | 263 |
-| B2 Pause | 5:00 | 55 | 131 |
-| B3 Under 1/4 | 2:00 | 92 | 220 |
-| B3 Over 1/4 | 1:00 | 110 | 263 |
-| B3 Under 2/4 | 2:00 | 92 | 220 |
-| B3 Over 2/4 | 1:00 | 110 | 263 |
-| B3 Under 3/4 | 2:00 | 92 | 220 |
-| B3 Over 3/4 | 1:00 | 110 | 263 |
-| B3 Under 4/4 | 2:00 | 92 | 220 |
-| B3 Over 4/4 | 1:00 | 110 | 263 |
-| B3 Pause | 5:00 | 55 | 131 |
-| Ausfahren | 8:00 | 60 -> 45 | 143 -> 108 |
+| Einfahren | 10:00 | 50 -> 75 | 112 -> 169 |
+| Aktivierung 1/2 | 1:00 | 100 | 225 |
+| locker 1/2 | 2:00 | 55 | 124 |
+| Aktivierung 2/2 | 1:00 | 100 | 225 |
+| locker 2/2 | 2:00 | 55 | 124 |
+| SS 70-80 rpm 1/3 | 10:00 | 89 | 200 |
+| Pause 1/3 | 5:00 | 55 | 124 |
+| SS 70-80 rpm 2/3 | 10:00 | 89 | 200 |
+| Pause 2/3 | 5:00 | 55 | 124 |
+| SS 70-80 rpm 3/3 | 10:00 | 89 | 200 |
+| Pause 3/3 | 5:00 | 55 | 124 |
+| Z2 | 6:00 | 65 | 146 |
+| Ausfahren | 8:00 | 60 -> 45 | 135 -> 101 |
