@@ -1,0 +1,25 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Grundlage Sprints</name>
+  <description>Lockere Grundlage (Z2) mit 6 kurzen Sprints zum Wachwerden der Beine. Sprints: 10 s maximal aus ca. 80-90 rpm, dazwischen locker rollen.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="1800" Power="0.68"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 1/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 1/6"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 2/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 2/6"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 3/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 3/6"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 4/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 4/6"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 5/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 5/6"/></SteadyState>
+    <SteadyState Duration="10" Power="1.60"><textevent timeoffset="0" message="Sprint 6/6"/></SteadyState>
+    <SteadyState Duration="290" Power="0.58"><textevent timeoffset="0" message="locker 6/6"/></SteadyState>
+    <SteadyState Duration="900" Power="0.68"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>

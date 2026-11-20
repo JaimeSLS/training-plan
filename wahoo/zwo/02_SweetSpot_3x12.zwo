@@ -1,0 +1,21 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>SweetSpot 3x12</name>
+  <description>3 x 12 min Sweet Spot (90-91 % FTP), 5 min Pause. Gleichmaessig fahren, Trittfrequenz 85-95 rpm. Baut Schwellen-Ausdauer auf.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="60" Power="1.00"><textevent timeoffset="0" message="Aktivierung 1/2"/></SteadyState>
+    <SteadyState Duration="120" Power="0.55"><textevent timeoffset="0" message="locker 1/2"/></SteadyState>
+    <SteadyState Duration="60" Power="1.00"><textevent timeoffset="0" message="Aktivierung 2/2"/></SteadyState>
+    <SteadyState Duration="120" Power="0.55"><textevent timeoffset="0" message="locker 2/2"/></SteadyState>
+    <SteadyState Duration="720" Power="0.91"><textevent timeoffset="0" message="Sweet Spot 1/3"/></SteadyState>
+    <SteadyState Duration="300" Power="0.55"><textevent timeoffset="0" message="Pause 1/3"/></SteadyState>
+    <SteadyState Duration="720" Power="0.91"><textevent timeoffset="0" message="Sweet Spot 2/3"/></SteadyState>
+    <SteadyState Duration="300" Power="0.55"><textevent timeoffset="0" message="Pause 2/3"/></SteadyState>
+    <SteadyState Duration="720" Power="0.91"><textevent timeoffset="0" message="Sweet Spot 3/3"/></SteadyState>
+    <SteadyState Duration="300" Power="0.55"><textevent timeoffset="0" message="Pause 3/3"/></SteadyState>
+    <Cooldown Duration="480" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>
