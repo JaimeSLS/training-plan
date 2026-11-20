@@ -1,7 +1,7 @@
 <workout_file>
   <author>Training Plan</author>
-  <name>OverUnder Rennsimulation</name>
-  <description>3 Bloecke a 12 min: jeweils 4 x (2 min @ 92 % / 1 min @ 110 %), 5 min Pause. Simuliert die wechselnde Last im Rennen (Antritte aus Kurven, Anstiege).</description>
+  <name>OverUnder Gruppenfahrt</name>
+  <description>3 Bloecke a 12 min: jeweils 4 x (2 min @ 92 % / 1 min @ 110 %), 5 min Pause. Simuliert das Tempo in der Gruppe: am Anstieg knapp unter der Schwelle mitfahren und bei jedem Antritt kurz drueber gehen.</description>
   <sportType>bike</sportType>
   <tags/>
   <workout>

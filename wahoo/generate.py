@@ -14,7 +14,7 @@ import struct
 import sys
 from xml.sax.saxutils import escape
 
-FTP = int(sys.argv[1]) if len(sys.argv) > 1 else 221
+FTP = int(sys.argv[1]) if len(sys.argv) > 1 else 239
 OUT = os.path.dirname(os.path.abspath(__file__))
 
 # --------------------------------------------------------------------------
@@ -42,57 +42,92 @@ def rep(n, *block):
 
 WORKOUTS = [
     {
-        "file": "01_Grundlage_Sprints",
+        "file": "01_Grundlage_Tempo_2h30",
         "date": dt.date(2026, 11, 21),
-        "title": "Grundlage + Sprints",
-        "core": False,
-        "desc": "Lockere Grundlage (Z2) mit 6 kurzen Sprints zum Wachwerden der Beine. "
-                "Sprints: 10 s maximal aus ca. 80-90 rpm, dazwischen locker rollen.",
+        "title": "Grundlage 2:30 h + Tempo",
+        "core": True,
+        "desc": "Wiedereinstieg aufs Rad nach der Pause: 2:30 h ruhige Grundlage (Z2) mit "
+                "3 x 6 min Tempo (85 %). Gern draussen und bergig. Ab der ersten Stunde "
+                "60 g Kohlenhydrate pro Stunde essen/trinken - das ueben wir fuer die 150 km.",
         "steps": [
             wu(10),
-            st("Z2 Grundlage", 30 * 60, 68),
-            *rep(6, st("Sprint", 10, 160, "interval"), st("locker", 290, 58, "rest")),
-            st("Z2 Grundlage", 15 * 60, 68),
+            st("Z2 Grundlage", 60 * 60, 68),
+            *rep(3, st("Tempo", 6 * 60, 85, "interval"), st("locker", 4 * 60, 62, "rest")),
+            st("Z2 Grundlage", 45 * 60, 67),
             cd(5),
         ],
     },
     {
-        "file": "02_SweetSpot_3x12",
+        "file": "02_SweetSpot_Chapmans_3x10",
         "date": dt.date(2026, 11, 24),
-        "title": "Sweet Spot 3x12 min",
+        "title": "Sweet Spot 'Chapman's Peak' 3x10 min",
         "core": True,
-        "desc": "3 x 12 min Sweet Spot (90-91 % FTP), 5 min Pause. Gleichmaessig fahren, "
-                "Trittfrequenz 85-95 rpm. Baut Schwellen-Ausdauer auf.",
+        "desc": "3 x 10 min @ 89 % FTP mit Kletter-Trittfrequenz 70-80 rpm, 5 min Pause. "
+                "Entspricht ungefaehr dem Anstieg auf Chapman's Peak im Gruppentempo.",
         "steps": [
             wu(10),
             *rep(2, st("Aktivierung", 60, 100, "interval"), st("locker", 120, 55, "rest")),
-            *rep(3, st("Sweet Spot", 12 * 60, 91, "interval"), st("Pause", 5 * 60, 55, "rest")),
+            *rep(3, st("SS 70-80 rpm", 10 * 60, 89, "interval"), st("Pause", 5 * 60, 55, "rest")),
+            st("Z2", 6 * 60, 65),
             cd(8),
         ],
     },
     {
-        "file": "03_VO2max_5x3",
+        "file": "03_VO2max_Attacken_5x3",
         "date": dt.date(2026, 11, 26),
-        "title": "VO2max 5x3 min",
-        "core": True,
-        "desc": "5 x 3 min @ 118 % FTP, 3 min Pause. Die ersten 30 s nicht ueberpacen, "
-                "die letzte Minute muss richtig hart sein.",
+        "title": "VO2max 5x3 min (Attacken am Anstieg)",
+        "core": False,
+        "desc": "5 x 3 min @ 112 % FTP, 3 min Pause. Fuer die Momente, in denen die Gruppe "
+                "am Suikerbossie oder an Chapman's anzieht. Wegen der Radpause bewusst etwas "
+                "unter dem ueblichen Niveau (112 statt 118 %).",
         "steps": [
             wu(12),
             *rep(3, st("Openers", 30, 110, "interval"), st("locker", 30, 55, "rest")),
             st("locker", 4 * 60, 55, "rest"),
-            *rep(5, st("VO2max", 3 * 60, 118, "interval"), st("Pause", 3 * 60, 50, "rest")),
+            *rep(5, st("VO2max", 3 * 60, 112, "interval"), st("Pause", 3 * 60, 50, "rest")),
             st("Z2", 10 * 60, 65),
             cd(6, 55, 45),
         ],
     },
     {
-        "file": "04_OverUnder_Rennsimulation",
+        "file": "04_Lange_Ausfahrt_3h30",
         "date": dt.date(2026, 11, 28),
-        "title": "Over-Unders (Rennsimulation)",
+        "title": "Lange Ausfahrt 3:30 h",
+        "core": True,
+        "desc": "Generalprobe fuer die Sonntagsrunde: 3:30 h Z2 mit 2 x 12 min Sweet Spot "
+                "(am besten an einem Anstieg). 60-80 g Kohlenhydrate/h, alle 15-20 min "
+                "trinken. Draussen fahren, der ROAM zeigt dir die Zielbereiche.",
+        "steps": [
+            wu(15),
+            st("Z2 Grundlage", 75 * 60, 68),
+            st("SS Anstieg 1", 12 * 60, 88, "interval"),
+            st("Z2 locker", 10 * 60, 63, "rest"),
+            st("SS Anstieg 2", 12 * 60, 88, "interval"),
+            st("Z2 Grundlage", 75 * 60, 67),
+            cd(11),
+        ],
+    },
+    {
+        "file": "05_Regeneration_60",
+        "date": dt.date(2026, 11, 29),
+        "title": "Lockeres Ausrollen (optional)",
+        "core": False,
+        "desc": "60 min ganz locker (Z1/Z2, unter 62 %). Beine durchbewegen nach dem langen "
+                "Samstag. Alternativ: komplett frei oder ein lockeres Padel-Match.",
+        "steps": [
+            wu(5, 45, 58),
+            st("locker Z1-Z2", 50 * 60, 58),
+            cd(5, 55, 45),
+        ],
+    },
+    {
+        "file": "06_OverUnder_Gruppenfahrt",
+        "date": dt.date(2026, 12, 1),
+        "title": "Over-Unders (Gruppenfahrt)",
         "core": True,
         "desc": "3 Bloecke a 12 min: jeweils 4 x (2 min @ 92 % / 1 min @ 110 %), 5 min Pause. "
-                "Simuliert die wechselnde Last im Rennen (Antritte aus Kurven, Anstiege).",
+                "Simuliert das Tempo in der Gruppe: am Anstieg knapp unter der Schwelle "
+                "mitfahren und bei jedem Antritt kurz drueber gehen.",
         "steps": [
             wu(15),
             *rep(2, st("Aktivierung", 60, 105, "interval"), st("locker", 120, 55, "rest")),
@@ -102,56 +137,6 @@ WORKOUTS = [
                 (f"B{b} Pause", 5 * 60, 55, 55, "rest"),
             )],
             cd(8),
-        ],
-    },
-    {
-        "file": "05_Lange_Grundlage",
-        "date": dt.date(2026, 11, 29),
-        "title": "Lange Grundlage (optional)",
-        "core": False,
-        "desc": "2 h ruhige Grundlage (Z2, 65-72 %). Gern auch draussen bzw. auf dem Crosser. "
-                "Wenn die Beine nach Samstag schwer sind: auf 75-90 min kuerzen.",
-        "steps": [
-            wu(10),
-            st("Z2 Grundlage", 50 * 60, 68),
-            st("Z2 hoehere TF (100 rpm)", 5 * 60, 65),
-            st("Z2 Grundlage", 45 * 60, 70),
-            cd(10),
-        ],
-    },
-    {
-        "file": "06_30-30_Starts",
-        "date": dt.date(2026, 12, 1),
-        "title": "Starts + 30/30",
-        "core": True,
-        "desc": "3 Start-Sprints (15 s, aus niedriger TF wie beim Rennstart), danach 2 x 8 x "
-                "(30 s @ 130 % / 30 s @ 50 %). Rennspezifisch, aber kurz - gut als letzter "
-                "harter Reiz vor dem Saisoneinstieg.",
-        "steps": [
-            wu(12),
-            *rep(3, st("Start-Sprint", 15, 180, "interval"), st("locker", 165, 55, "rest")),
-            *rep(8, st("S1 30s on", 30, 130, "interval"), st("S1 30s off", 30, 50, "rest")),
-            st("Pause", 5 * 60, 55, "rest"),
-            *rep(8, st("S2 30s on", 30, 130, "interval"), st("S2 30s off", 30, 50, "rest")),
-            st("Pause", 5 * 60, 55, "rest"),
-            st("Z2", 8 * 60, 65),
-            cd(5),
-        ],
-    },
-    {
-        "file": "07_Opener_Vortag_Rennen",
-        "date": None,
-        "title": "Opener (Tag vor dem Rennen, Bonus)",
-        "core": False,
-        "desc": "Kurzer Opener fuer den Tag vor dem ersten Rennen: locker mit 3 x 1 min "
-                "@ 105 % und 3 kurzen Sprints. Soll frisch machen, nicht muede.",
-        "steps": [
-            wu(10),
-            st("Z2", 10 * 60, 65),
-            *rep(3, st("Opener", 60, 105, "interval"), st("locker", 120, 55, "rest")),
-            *rep(3, st("Sprint", 10, 150, "interval"), st("locker", 110, 55, "rest")),
-            st("Z2", 5 * 60, 62),
-            cd(5),
         ],
     },
 ]
@@ -281,7 +266,7 @@ def watts(pct):
 
 def plan_md():
     out = [
-        "# Wahoo-Workouts: Einstieg in die Saison (21.11. - 01.12.2026)",
+        "# Wahoo-Workouts: Fit fuer die Kapstadt-Saison (21.11. - 01.12.2026)",
         "",
         f"Alle Ziele sind in **% FTP** hinterlegt. Die Watt-Angaben unten gelten fuer **FTP {FTP} W**;",
         "der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen ist.",
@@ -296,9 +281,27 @@ def plan_md():
         out.append(f"| {i} | {d} | {w['title']} | {total // 60} min | {np_:.2f} | {tss:.0f} | {core} |")
     out += [
         "",
-        "**Nur 4 Einheiten?** Fahr die Kern-Einheiten 2, 3, 4 und 6. **5 oder 6?** Nimm 1 und/oder 5 dazu.",
-        "Ruhetage: So 22., Mo 23., Mi 25., Fr 27., Mo 30.11. Verschieben um +-1 Tag ist ok, aber",
-        "nie zwei harte Einheiten (2, 3, 4, 6) an aufeinanderfolgenden Tagen.",
+        f"FTP {FTP} W aus Strava (manuell gesetzt). 20-min-Bestwert 2026: 263 W (02.10.) -> die FTP ist eher",
+        "konservativ. Letzte Radfahrt laut Strava: 28.10., seitdem 3-5x/Woche Padel. Deshalb startet der Plan",
+        "mit Grundlage und etwas reduzierter VO2max-Intensitaet.",
+        "",
+        "**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6 (die langen Fahrten sind fuer die 150 km",
+        "am wichtigsten). **5 oder 6?** Nimm 3 und/oder 5 dazu.",
+        "",
+        "Freie Tage fuers Rad: So 22., Mo 23., Mi 25., Fr 27., Mo 30.11. Padel passt gut auf Mo/Mi -",
+        "aber **kein langes Padel am Tag vor Einheit 1, 4 oder 6**, und nie zwei harte Einheiten",
+        "(2, 3, 6) an aufeinanderfolgenden Tagen.",
+        "",
+        "## Sonntagsrunde 150 km - Pacing",
+        "",
+        f"- **Flach / in der Gruppe:** 60-72 % FTP = **{watts(60)}-{watts(72)} W**. Im Windschatten ruhig darunter.",
+        f"- **Anstiege (Chapman's, Suikerbossie, Smitswinkel):** max. 85-90 % = **{watts(85)}-{watts(90)} W**.",
+        f"  Nicht ueber {watts(100)} W gehen, auch wenn die Gruppe anzieht - lieber kurz abreissen lassen und oben wieder ran.",
+        f"- **Ziel-Normalized-Power** fuer 5+ h: ca. 65-70 % = **{watts(65)}-{watts(70)} W**.",
+        "- **Essen:** 60-80 g Kohlenhydrate pro Stunde ab Minute 30, 500-750 ml pro Stunde trinken",
+        "  (bei Kapstadt-Hitze und Suedostwind eher mehr, mit Salz).",
+        "- **Coffee Rides unter der Woche** (Sea Point <-> Chapman's): als Grundlage zaehlen sie, wenn du die",
+        "  Anstiege im Sweet-Spot-Bereich faehrst - dann ersetzen sie Einheit 2 oder 6.",
         "",
     ]
     for i, w in enumerate(WORKOUTS, 1):

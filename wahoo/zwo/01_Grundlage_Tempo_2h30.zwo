@@ -1,0 +1,19 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Grundlage Tempo 2h30</name>
+  <description>Wiedereinstieg aufs Rad nach der Pause: 2:30 h ruhige Grundlage (Z2) mit 3 x 6 min Tempo (85 %). Gern draussen und bergig. Ab der ersten Stunde 60 g Kohlenhydrate pro Stunde essen/trinken - das ueben wir fuer die 150 km.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="3600" Power="0.68"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="360" Power="0.85"><textevent timeoffset="0" message="Tempo 1/3"/></SteadyState>
+    <SteadyState Duration="240" Power="0.62"><textevent timeoffset="0" message="locker 1/3"/></SteadyState>
+    <SteadyState Duration="360" Power="0.85"><textevent timeoffset="0" message="Tempo 2/3"/></SteadyState>
+    <SteadyState Duration="240" Power="0.62"><textevent timeoffset="0" message="locker 2/3"/></SteadyState>
+    <SteadyState Duration="360" Power="0.85"><textevent timeoffset="0" message="Tempo 3/3"/></SteadyState>
+    <SteadyState Duration="240" Power="0.62"><textevent timeoffset="0" message="locker 3/3"/></SteadyState>
+    <SteadyState Duration="2700" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>
