@@ -43,12 +43,12 @@ def rep(n, *block):
 WORKOUTS = [
     {
         "file": "01_Wiedereinstieg_2h",
-        "date": dt.date(2026, 11, 21),
+        "date": dt.date(2026, 11, 23),
         "title": "Wiedereinstieg: 2 h Grundlage",
         "core": True,
-        "desc": "Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu "
+        "desc": "Erste Fahrt nach der Radpause (und nach dem Geburtstags-Padel): 2 h ruhig in Z2 (65-70 %), dazu "
                 "4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt "
-                "wieder rund wird. Keine Intervalle - die Beine sollen sich wieder ans Rad gewoehnen.",
+                "wieder rund wird. Keine Intervalle. Wenn die Zeit unter der Woche knapp ist: auf 90 min kuerzen.",
         "steps": [
             wu(10, 50, 68),
             st("Z2 Grundlage", 40 * 60, 67),
@@ -59,7 +59,7 @@ WORKOUTS = [
     },
     {
         "file": "02_Tempo_3x10",
-        "date": dt.date(2026, 11, 24),
+        "date": dt.date(2026, 11, 25),
         "title": "Tempo 3x10 min",
         "core": True,
         "desc": "3 x 10 min Tempo @ 83 % FTP, 5 min locker dazwischen, 80-90 rpm. "
@@ -74,18 +74,18 @@ WORKOUTS = [
         ],
     },
     {
-        "file": "03_Grundlage_Antritte_90",
-        "date": dt.date(2026, 11, 26),
-        "title": "Grundlage 90 min + kurze Antritte (optional)",
+        "file": "03_Grundlage_Antritte_75",
+        "date": dt.date(2026, 11, 27),
+        "title": "Grundlage 75 min + Antritte (optional)",
         "core": False,
-        "desc": "90 min Z2 mit 6 kurzen Antritten (15 s zuegig, nicht maximal) - weckt die "
-                "Spritzigkeit fuer die Gruppe, ohne zu ermueden. Nach einem harten Padel-Tag "
-                "die Antritte weglassen und nur Grundlage fahren.",
+        "desc": "75 min lockere Grundlage mit 4 kurzen Antritten (15 s zuegig, nicht maximal). "
+                "Vortag der langen Ausfahrt: soll die Beine oeffnen, nicht ermueden. "
+                "Bei schweren Beinen die Antritte weglassen.",
         "steps": [
             wu(10),
-            st("Z2 Grundlage", 30 * 60, 68),
-            *rep(6, st("Antritt", 15, 130, "interval"), st("locker", 165, 60, "rest")),
-            st("Z2 Grundlage", 27 * 60, 68),
+            st("Z2 Grundlage", 25 * 60, 66),
+            *rep(4, st("Antritt", 15, 130, "interval"), st("locker", 165, 60, "rest")),
+            st("Z2 Grundlage", 23 * 60, 66),
             cd(5),
         ],
     },
@@ -301,8 +301,11 @@ def plan_md():
         "",
         "**Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6. **5 oder 6?** Nimm 3 und/oder 5 dazu.",
         "",
-        "**Padel in diesen 1,5 Wochen:** auf 2-3x pro Woche reduzieren - die Zeit geht ins Rad.",
-        "Gut passen So 22., Mo 23. und Mi 25.11. **Fr 27. und Mo 30. frei lassen** (Vortag von 4 und 6).",
+        "**Sa 21.11. - Geburtstag:** 3 h Padel (12-15 Uhr). Das ist die harte Einheit des Wochenendes,",
+        "deshalb kein Rad am Samstag. Viel trinken und danach ordentlich essen. **So 22.11. komplett frei.**",
+        "",
+        "**Padel sonst in diesen 1,5 Wochen:** hoechstens 2x pro Woche - die Zeit geht ins Rad.",
+        "Gut passen Di 24. und Do 26.11. **Fr 27. und Mo 30. kein Padel** (Vortag von 4 und 6).",
         "",
         "## Sonntagsrunde 150 km - Pacing",
         "",

@@ -5,9 +5,9 @@ der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen i
 
 | # | Datum | Workout | Dauer | IF | TSS | Pflicht? |
 |---|-------|---------|-------|----|-----|----------|
-| 1 | Sa 21.11. | Wiedereinstieg: 2 h Grundlage | 120 min | 0.66 | 88 | Kern |
-| 2 | Di 24.11. | Tempo 3x10 min | 70 min | 0.73 | 62 | Kern |
-| 3 | Do 26.11. | Grundlage 90 min + kurze Antritte (optional) | 90 min | 0.69 | 72 | optional |
+| 1 | Mo 23.11. | Wiedereinstieg: 2 h Grundlage | 120 min | 0.66 | 88 | Kern |
+| 2 | Mi 25.11. | Tempo 3x10 min | 70 min | 0.73 | 62 | Kern |
+| 3 | Fr 27.11. | Grundlage 75 min + Antritte (optional) | 75 min | 0.67 | 56 | optional |
 | 4 | Sa 28.11. | Lange Ausfahrt 3 h | 180 min | 0.70 | 146 | Kern |
 | 5 | So 29.11. | Lockeres Ausrollen (optional) | 60 min | 0.57 | 32 | optional |
 | 6 | Di 01.12. | Sweet Spot 'Chapman's Peak' 3x10 min | 75 min | 0.77 | 73 | Kern |
@@ -35,8 +35,11 @@ Over-Unders folgen erst in Kapstadt, wenn die Basis wieder steht.
 
 **Nur 4 Einheiten?** Fahr die Kern-Einheiten 1, 2, 4 und 6. **5 oder 6?** Nimm 3 und/oder 5 dazu.
 
-**Padel in diesen 1,5 Wochen:** auf 2-3x pro Woche reduzieren - die Zeit geht ins Rad.
-Gut passen So 22., Mo 23. und Mi 25.11. **Fr 27. und Mo 30. frei lassen** (Vortag von 4 und 6).
+**Sa 21.11. - Geburtstag:** 3 h Padel (12-15 Uhr). Das ist die harte Einheit des Wochenendes,
+deshalb kein Rad am Samstag. Viel trinken und danach ordentlich essen. **So 22.11. komplett frei.**
+
+**Padel sonst in diesen 1,5 Wochen:** hoechstens 2x pro Woche - die Zeit geht ins Rad.
+Gut passen Di 24. und Do 26.11. **Fr 27. und Mo 30. kein Padel** (Vortag von 4 und 6).
 
 ## Sonntagsrunde 150 km - Pacing
 
@@ -51,7 +54,7 @@ Gut passen So 22., Mo 23. und Mi 25.11. **Fr 27. und Mo 30. frei lassen** (Vorta
 
 ## 1. Wiedereinstieg: 2 h Grundlage - 120 min
 
-Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu 4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt wieder rund wird. Keine Intervalle - die Beine sollen sich wieder ans Rad gewoehnen.
+Erste Fahrt nach der Radpause (und nach dem Geburtstags-Padel): 2 h ruhig in Z2 (65-70 %), dazu 4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last, damit der Tritt wieder rund wird. Keine Intervalle. Wenn die Zeit unter der Woche knapp ist: auf 90 min kuerzen.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
@@ -85,27 +88,23 @@ Erste Fahrt nach gut 3 Wochen Radpause: 2 h ruhig in Z2 (65-70 %), dazu 4 x 1 mi
 | Z2 | 5:00 | 65 | 146 |
 | Ausfahren | 5:00 | 60 -> 45 | 135 -> 101 |
 
-## 3. Grundlage 90 min + kurze Antritte (optional) - 90 min
+## 3. Grundlage 75 min + Antritte (optional) - 75 min
 
-90 min Z2 mit 6 kurzen Antritten (15 s zuegig, nicht maximal) - weckt die Spritzigkeit fuer die Gruppe, ohne zu ermueden. Nach einem harten Padel-Tag die Antritte weglassen und nur Grundlage fahren.
+75 min lockere Grundlage mit 4 kurzen Antritten (15 s zuegig, nicht maximal). Vortag der langen Ausfahrt: soll die Beine oeffnen, nicht ermueden. Bei schweren Beinen die Antritte weglassen.
 
 | Abschnitt | Dauer | % FTP | Watt |
 |---|---|---|---|
 | Einfahren | 10:00 | 50 -> 75 | 112 -> 169 |
-| Z2 Grundlage | 30:00 | 68 | 153 |
-| Antritt 1/6 | 0:15 | 130 | 292 |
-| locker 1/6 | 2:45 | 60 | 135 |
-| Antritt 2/6 | 0:15 | 130 | 292 |
-| locker 2/6 | 2:45 | 60 | 135 |
-| Antritt 3/6 | 0:15 | 130 | 292 |
-| locker 3/6 | 2:45 | 60 | 135 |
-| Antritt 4/6 | 0:15 | 130 | 292 |
-| locker 4/6 | 2:45 | 60 | 135 |
-| Antritt 5/6 | 0:15 | 130 | 292 |
-| locker 5/6 | 2:45 | 60 | 135 |
-| Antritt 6/6 | 0:15 | 130 | 292 |
-| locker 6/6 | 2:45 | 60 | 135 |
-| Z2 Grundlage | 27:00 | 68 | 153 |
+| Z2 Grundlage | 25:00 | 66 | 148 |
+| Antritt 1/4 | 0:15 | 130 | 292 |
+| locker 1/4 | 2:45 | 60 | 135 |
+| Antritt 2/4 | 0:15 | 130 | 292 |
+| locker 2/4 | 2:45 | 60 | 135 |
+| Antritt 3/4 | 0:15 | 130 | 292 |
+| locker 3/4 | 2:45 | 60 | 135 |
+| Antritt 4/4 | 0:15 | 130 | 292 |
+| locker 4/4 | 2:45 | 60 | 135 |
+| Z2 Grundlage | 23:00 | 66 | 148 |
 | Ausfahren | 5:00 | 60 -> 45 | 135 -> 101 |
 
 ## 4. Lange Ausfahrt 3 h - 180 min

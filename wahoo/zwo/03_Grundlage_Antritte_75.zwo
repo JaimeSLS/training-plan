@@ -1,0 +1,21 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Grundlage Antritte 75</name>
+  <description>75 min lockere Grundlage mit 4 kurzen Antritten (15 s zuegig, nicht maximal). Vortag der langen Ausfahrt: soll die Beine oeffnen, nicht ermueden. Bei schweren Beinen die Antritte weglassen.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="1500" Power="0.66"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="15" Power="1.30"><textevent timeoffset="0" message="Antritt 1/4"/></SteadyState>
+    <SteadyState Duration="165" Power="0.60"><textevent timeoffset="0" message="locker 1/4"/></SteadyState>
+    <SteadyState Duration="15" Power="1.30"><textevent timeoffset="0" message="Antritt 2/4"/></SteadyState>
+    <SteadyState Duration="165" Power="0.60"><textevent timeoffset="0" message="locker 2/4"/></SteadyState>
+    <SteadyState Duration="15" Power="1.30"><textevent timeoffset="0" message="Antritt 3/4"/></SteadyState>
+    <SteadyState Duration="165" Power="0.60"><textevent timeoffset="0" message="locker 3/4"/></SteadyState>
+    <SteadyState Duration="15" Power="1.30"><textevent timeoffset="0" message="Antritt 4/4"/></SteadyState>
+    <SteadyState Duration="165" Power="0.60"><textevent timeoffset="0" message="locker 4/4"/></SteadyState>
+    <SteadyState Duration="1380" Power="0.66"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>
