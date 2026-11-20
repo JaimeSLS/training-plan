@@ -352,6 +352,61 @@ def plan_md():
     return "\n".join(out)
 
 
+# --------------------------------------------------------------------------
+# intervals.icu Text-Format (zum Reinkopieren in den Workout-Builder am Handy)
+# --------------------------------------------------------------------------
+import re
+
+def _dur(sec):
+    m, s_ = divmod(sec, 60)
+    if m and s_:
+        return f"{m}m{s_}s"
+    return f"{m}m" if m else f"{s_}s"
+
+def _line(name, dur, lo, hi):
+    name = re.sub(r" \d+/\d+$", "", name)
+    cad = ""
+    m = re.search(r"(\d+-\d+) rpm", name)
+    if m:
+        cad = f" {m.group(1)}rpm"
+        name = name.replace(m.group(0), "").strip()
+    name = re.sub(r"(Anstieg) \d+$", r"\1", name)
+    name = re.sub(r"^Z2\b\s*", "", name).strip() or "Grundlage"
+    power = f"{lo}%" if lo == hi else f"ramp {lo}-{hi}%"
+    return f"- {name} {_dur(dur)} {power}{cad}"
+
+def build_icu(w):
+    steps, out, i = w["steps"], [], 0
+    while i < len(steps):
+        m = re.search(r" 1/(\d+)$", steps[i][0])
+        if m:
+            n = int(m.group(1))
+            k = 1
+            while i + k < len(steps) and not steps[i + k][0].endswith(f" 2/{n}"):
+                k += 1
+            out += ["", f"{n}x"] + [_line(*st_[:4]) for st_ in steps[i:i + k]] + [""]
+            i += k * n
+        else:
+            out.append(_line(*steps[i][:4]))
+            i += 1
+    text = "\n".join(out)
+    return re.sub(r"\n{3,}", "\n\n", text).strip()
+
+def icu_md():
+    out = [
+        "# Workouts fuer intervals.icu (zum Reinkopieren)",
+        "",
+        "Pro Workout: in intervals.icu im Kalender auf den Tag tippen -> neues Workout (Radfahren) ->",
+        "Name eintragen -> den Text-Block unten komplett in das Beschreibungsfeld kopieren -> speichern.",
+        "intervals.icu baut daraus automatisch die Intervalle.",
+        "",
+    ]
+    for i, w in enumerate(WORKOUTS, 1):
+        d = f"{WD[w['date'].weekday()]} {w['date']:%d.%m.}"
+        out += [f"## {i}. {d} - {w['title']}", "", f"Name: `{w['title']}`", "", "```", build_icu(w), "```", ""]
+    return "\n".join(out)
+
+
 def main():
     created = dt.datetime(2026, 11, 20, 12, 0, tzinfo=dt.timezone.utc)
     for sub in ("fit", "zwo"):
@@ -363,6 +418,8 @@ def main():
             fh.write(build_zwo(w))
     with open(os.path.join(OUT, "PLAN.md"), "w", encoding="utf-8") as fh:
         fh.write(plan_md())
+    with open(os.path.join(OUT, "INTERVALS_ICU.md"), "w", encoding="utf-8") as fh:
+        fh.write(icu_md())
     for w in WORKOUTS:
         total, np_, tss = stats(w)
         print(f"{w['file']:32s} {total // 60:4d} min  IF {np_:.2f}  TSS {tss:5.0f}  steps {len(w['steps'])}")
