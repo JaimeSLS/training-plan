@@ -1,0 +1,16 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Kapstadt Grundlage 2h</name>
+  <description>Erste richtige Runde in Kapstadt, z. B. Sea Point -&gt; Camps Bay -&gt; Hout Bay -&gt; Chapman's Peak und zurueck. 2 h Z2, die zwei Tempo-Abschnitte (8 min @ 82 %) an Suikerbossie und Chapman's legen. Waerme: mehr trinken als in Heidelberg, mit Salz.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.75"/>
+    <SteadyState Duration="2400" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="480" Power="0.82"><textevent timeoffset="0" message="Tempo Anstieg 1"/></SteadyState>
+    <SteadyState Duration="300" Power="0.63"><textevent timeoffset="0" message="Z2 locker"/></SteadyState>
+    <SteadyState Duration="480" Power="0.82"><textevent timeoffset="0" message="Tempo Anstieg 2"/></SteadyState>
+    <SteadyState Duration="2520" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="420" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>

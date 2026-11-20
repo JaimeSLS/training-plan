@@ -1,0 +1,21 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Wiedereinstieg 90</name>
+  <description>Erste Fahrt nach der Radpause, am Tag nach dem Geburtstags-Padel: 90 min ganz ruhig in Z2 (65-68 %), dazu 4 x 1 min hohe Trittfrequenz (100-110 rpm) bei lockerer Last. Wenn du nach Samstag platt bist: weglassen, Montag ist wichtiger.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.65"/>
+    <SteadyState Duration="1500" Power="0.66"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <SteadyState Duration="60" Power="0.62"><textevent timeoffset="0" message="TF 100-110 rpm 1/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.66"><textevent timeoffset="0" message="Z2 1/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.62"><textevent timeoffset="0" message="TF 100-110 rpm 2/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.66"><textevent timeoffset="0" message="Z2 2/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.62"><textevent timeoffset="0" message="TF 100-110 rpm 3/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.66"><textevent timeoffset="0" message="Z2 3/4"/></SteadyState>
+    <SteadyState Duration="60" Power="0.62"><textevent timeoffset="0" message="TF 100-110 rpm 4/4"/></SteadyState>
+    <SteadyState Duration="240" Power="0.66"><textevent timeoffset="0" message="Z2 4/4"/></SteadyState>
+    <SteadyState Duration="1800" Power="0.67"><textevent timeoffset="0" message="Z2 Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.60" PowerHigh="0.45"/>
+  </workout>
+</workout_file>
