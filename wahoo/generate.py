@@ -42,6 +42,22 @@ def rep(n, *block):
 
 WORKOUTS = [
     {
+        "file": "00_Einrollen_50",
+        "date": dt.date(2026, 11, 20),
+        "title": "Lockeres Einrollen 50 min (optional)",
+        "core": False,
+        "desc": "Ganz lockerer erster Kontakt mit dem Rad, am Abend vor dem 3-h-Geburtstags-Padel. "
+                "Nur Z1/Z2 (60-65 %), dazu 3 x 1 min hohe Trittfrequenz. Du solltest danach "
+                "frischer sein als vorher - nichts drueckt, nichts brennt.",
+        "steps": [
+            wu(10, 50, 63),
+            st("Grundlage", 15 * 60, 63),
+            *rep(3, st("TF 100-110 rpm", 60, 60, "interval"), st("locker", 3 * 60, 62)),
+            st("Grundlage", 8 * 60, 63),
+            cd(5, 58, 45),
+        ],
+    },
+    {
         "file": "01_Wiedereinstieg_90",
         "date": dt.date(2026, 11, 22),
         "title": "Wiedereinstieg 90 min (optional)",
@@ -267,7 +283,7 @@ def watts(pct):
 
 def plan_md():
     out = [
-        "# Wahoo-Workouts: Fit fuer die Kapstadt-Saison (22.11. - 01.12.2026)",
+        "# Wahoo-Workouts: Fit fuer die Kapstadt-Saison (20.11. - 01.12.2026)",
         "",
         f"Alle Ziele sind in **% FTP** hinterlegt. Die Watt-Angaben unten gelten fuer **FTP {FTP} W**;",
         "der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen ist.",
@@ -275,7 +291,8 @@ def plan_md():
         "| # | Datum | Workout | Dauer | IF | TSS | Pflicht? |",
         "|---|-------|---------|-------|----|-----|----------|",
     ]
-    for i, w in enumerate(WORKOUTS, 1):
+    for w in WORKOUTS:
+        i = int(w["file"][:2])
         total, np_, tss = stats(w)
         d = f"{WD[w['date'].weekday()]} {w['date']:%d.%m.}" if w["date"] else "Vortag Rennen"
         core = "Kern" if w["core"] else "optional"
@@ -303,6 +320,7 @@ def plan_md():
         "",
         "| Tag | Was |",
         "|---|---|",
+        "| Fr 20.11. | Rad 0: Lockeres Einrollen 50 min (optional, abends) |",
         "| Sa 21.11. | Geburtstag: 3 h Padel (12-15 Uhr) - harte Einheit, kein Rad |",
         "| So 22.11. | Rad 1: Wiedereinstieg 90 min (optional) |",
         "| Mo 23.11. | Rad 2: Lange Ausfahrt 3 h |",
@@ -338,7 +356,8 @@ def plan_md():
         "  Anstiege im Sweet-Spot-Bereich faehrst - dann ersetzen sie Einheit 2 oder 6.",
         "",
     ]
-    for i, w in enumerate(WORKOUTS, 1):
+    for w in WORKOUTS:
+        i = int(w["file"][:2])
         total, _, _ = stats(w)
         out += [f"## {i}. {w['title']} - {total // 60} min", "", w["desc"], "",
                 "| Abschnitt | Dauer | % FTP | Watt |", "|---|---|---|---|"]
@@ -401,7 +420,8 @@ def icu_md():
         "intervals.icu baut daraus automatisch die Intervalle.",
         "",
     ]
-    for i, w in enumerate(WORKOUTS, 1):
+    for w in WORKOUTS:
+        i = int(w["file"][:2])
         d = f"{WD[w['date'].weekday()]} {w['date']:%d.%m.}"
         out += [f"## {i}. {d} - {w['title']}", "", f"Name: `{w['title']}`", "", "```", build_icu(w), "```", ""]
     return "\n".join(out)

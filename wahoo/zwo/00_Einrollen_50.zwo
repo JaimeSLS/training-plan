@@ -1,0 +1,19 @@
+<workout_file>
+  <author>Training Plan</author>
+  <name>Einrollen 50</name>
+  <description>Ganz lockerer erster Kontakt mit dem Rad, am Abend vor dem 3-h-Geburtstags-Padel. Nur Z1/Z2 (60-65 %), dazu 3 x 1 min hohe Trittfrequenz. Du solltest danach frischer sein als vorher - nichts drueckt, nichts brennt.</description>
+  <sportType>bike</sportType>
+  <tags/>
+  <workout>
+    <Warmup Duration="600" PowerLow="0.50" PowerHigh="0.63"/>
+    <SteadyState Duration="900" Power="0.63"><textevent timeoffset="0" message="Grundlage"/></SteadyState>
+    <SteadyState Duration="60" Power="0.60"><textevent timeoffset="0" message="TF 100-110 rpm 1/3"/></SteadyState>
+    <SteadyState Duration="180" Power="0.62"><textevent timeoffset="0" message="locker 1/3"/></SteadyState>
+    <SteadyState Duration="60" Power="0.60"><textevent timeoffset="0" message="TF 100-110 rpm 2/3"/></SteadyState>
+    <SteadyState Duration="180" Power="0.62"><textevent timeoffset="0" message="locker 2/3"/></SteadyState>
+    <SteadyState Duration="60" Power="0.60"><textevent timeoffset="0" message="TF 100-110 rpm 3/3"/></SteadyState>
+    <SteadyState Duration="180" Power="0.62"><textevent timeoffset="0" message="locker 3/3"/></SteadyState>
+    <SteadyState Duration="480" Power="0.63"><textevent timeoffset="0" message="Grundlage"/></SteadyState>
+    <Cooldown Duration="300" PowerLow="0.58" PowerHigh="0.45"/>
+  </workout>
+</workout_file>

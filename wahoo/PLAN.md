@@ -1,10 +1,11 @@
-# Wahoo-Workouts: Fit fuer die Kapstadt-Saison (22.11. - 01.12.2026)
+# Wahoo-Workouts: Fit fuer die Kapstadt-Saison (20.11. - 01.12.2026)
 
 Alle Ziele sind in **% FTP** hinterlegt. Die Watt-Angaben unten gelten fuer **FTP 225 W**;
 der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen ist.
 
 | # | Datum | Workout | Dauer | IF | TSS | Pflicht? |
 |---|-------|---------|-------|----|-----|----------|
+| 0 | Fr 20.11. | Lockeres Einrollen 50 min (optional) | 50 min | 0.61 | 31 | optional |
 | 1 | So 22.11. | Wiedereinstieg 90 min (optional) | 90 min | 0.65 | 63 | optional |
 | 2 | Mo 23.11. | Lange Ausfahrt 3 h | 180 min | 0.70 | 146 | Kern |
 | 3 | Di 24.11. | Tempo 3x10 min | 70 min | 0.73 | 62 | Kern |
@@ -33,6 +34,7 @@ der Wahoo rechnet automatisch mit der FTP, die in deiner Wahoo-App eingetragen i
 
 | Tag | Was |
 |---|---|
+| Fr 20.11. | Rad 0: Lockeres Einrollen 50 min (optional, abends) |
 | Sa 21.11. | Geburtstag: 3 h Padel (12-15 Uhr) - harte Einheit, kein Rad |
 | So 22.11. | Rad 1: Wiedereinstieg 90 min (optional) |
 | Mo 23.11. | Rad 2: Lange Ausfahrt 3 h |
@@ -66,6 +68,23 @@ und am unteren Ende der Wattbereiche unten.
   (bei Kapstadt-Hitze und Suedostwind eher mehr, mit Salz).
 - **Coffee Rides unter der Woche** (Sea Point <-> Chapman's): als Grundlage zaehlen sie, wenn du die
   Anstiege im Sweet-Spot-Bereich faehrst - dann ersetzen sie Einheit 2 oder 6.
+
+## 0. Lockeres Einrollen 50 min (optional) - 50 min
+
+Ganz lockerer erster Kontakt mit dem Rad, am Abend vor dem 3-h-Geburtstags-Padel. Nur Z1/Z2 (60-65 %), dazu 3 x 1 min hohe Trittfrequenz. Du solltest danach frischer sein als vorher - nichts drueckt, nichts brennt.
+
+| Abschnitt | Dauer | % FTP | Watt |
+|---|---|---|---|
+| Einfahren | 10:00 | 50 -> 63 | 112 -> 142 |
+| Grundlage | 15:00 | 63 | 142 |
+| TF 100-110 rpm 1/3 | 1:00 | 60 | 135 |
+| locker 1/3 | 3:00 | 62 | 140 |
+| TF 100-110 rpm 2/3 | 1:00 | 60 | 135 |
+| locker 2/3 | 3:00 | 62 | 140 |
+| TF 100-110 rpm 3/3 | 1:00 | 60 | 135 |
+| locker 3/3 | 3:00 | 62 | 140 |
+| Grundlage | 8:00 | 63 | 142 |
+| Ausfahren | 5:00 | 58 -> 45 | 130 -> 101 |
 
 ## 1. Wiedereinstieg 90 min (optional) - 90 min
 

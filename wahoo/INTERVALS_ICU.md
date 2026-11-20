@@ -4,6 +4,22 @@ Pro Workout: in intervals.icu im Kalender auf den Tag tippen -> neues Workout (R
 Name eintragen -> den Text-Block unten komplett in das Beschreibungsfeld kopieren -> speichern.
 intervals.icu baut daraus automatisch die Intervalle.
 
+## 0. Fr 20.11. - Lockeres Einrollen 50 min (optional)
+
+Name: `Lockeres Einrollen 50 min (optional)`
+
+```
+- Einfahren 10m ramp 50-63%
+- Grundlage 15m 63%
+
+3x
+- TF 1m 60% 100-110rpm
+- locker 3m 62%
+
+- Grundlage 8m 63%
+- Ausfahren 5m ramp 58-45%
+```
+
 ## 1. So 22.11. - Wiedereinstieg 90 min (optional)
 
 Name: `Wiedereinstieg 90 min (optional)`
